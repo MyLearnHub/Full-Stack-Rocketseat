@@ -9,3 +9,4 @@
 ## Gerenciamento
   * Processador, Memória, HDs
   * Mouse, Teclado
+  

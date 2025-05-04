@@ -8,3 +8,4 @@
   * Parte lógica do computador
   * Programas, Aplicativos, Apps
     * Navegadores, Mensagens, Redes sociais
+    

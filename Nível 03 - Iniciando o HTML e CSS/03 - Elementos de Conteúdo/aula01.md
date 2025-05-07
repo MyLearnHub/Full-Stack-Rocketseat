@@ -1,0 +1,3 @@
+# Semântica
+  - dar significado
+  - elementos

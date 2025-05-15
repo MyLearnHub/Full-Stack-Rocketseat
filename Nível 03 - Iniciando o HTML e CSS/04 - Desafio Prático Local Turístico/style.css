@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #f5f4f0;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #d9d9d9;
+}
+
+main {
+  width: 87.5%;
+  margin: 5.5rem auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e1624f;
+}
+
+h1,
+h2,
+h3 {
+  color: #1b1b1b;
+  font-weight: bold;
+}
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+  margin-left: 10px;
+  margin-bottom: 4px;
+}
+
+p {
+  color: #333;
+  font-size: 1rem;
+}
+
+.description {
+  padding: 4px 0;
+}
+
+main img {
+  width: 100%;
+  border-radius: 28px;
+}
+
+.description p {
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.content .title_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.content .title_list .title {
+  gap: 2px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+section img {
+  margin-bottom: 20px;
+}
+
+ul {
+  font-weight: bold;
+  color: #333;
+}
+
+ul li {
+  margin-left: 1.5rem;
+}
+
+ul li::marker {
+  color: #333333;
+}
+
+.blue {
+  color: #0c51a7;
+}
+
+.purple {
+  color: #591b98;
+}
+
+.pink {
+  color: #e5245e;
+}
+
+.orange {
+  color: #e95e10;
+}
+
+.headline {
+  text-align: center;
+}
+
+footer {
+  font-family: "Alice", serif;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+footer img {
+  vertical-align: middle;
+}

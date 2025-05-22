@@ -1,6 +1,7 @@
-# Order
+# Revisão e Propriedades Extras Flex-Flow, Align-Items, Row e Column-Gap
 
-![Mapa Mental Order](aula10.png)
+![Mapa Mental Container](aula11-1.png)
+![Mapa Mental Children](aula11-2.png)
 
 ```html
   <div class="container">
@@ -18,8 +19,13 @@
 
 ```css
   .container {
+    height: 50vh;
     border: dashed;
     display: flex;
+    flex-flow: wrap;
+    /* flex-flow: wrap column; */
+    row-gap: 2rem; /* formas completas do shorthand "gap", melhor com flex-flow */
+    column-gap: 2rem;
   }
 
   .item {
@@ -30,9 +36,8 @@
   }
 
   .item:nth-child(2) {
-    order: -1;
-    order: 0;
-    order: 1;
-    order: 2;
+    align-self: flex-start;
+    align-self: center;
+    align-self: flex-end;
   }
 ```

@@ -9,7 +9,7 @@ main {
     max-width: 1040px;
     margin-inline: auto;
 
-    #inner-intro-container {
+    #info {
       max-width: 680px;
       margin-inline: auto;
 
@@ -21,7 +21,7 @@ main {
         justify-content: center;
         align-items: center;
 
-        #code-icon {
+        #icon {
           position: absolute;
           top: 45%;
           left: 52.5%;
@@ -83,10 +83,7 @@ main {
   }
 }
 
-#caret-double-down {
+#arrow {
   margin-top: 94px;
-  
-  img {
-    height: 32px;
-  }
+  height: 32px;
 }

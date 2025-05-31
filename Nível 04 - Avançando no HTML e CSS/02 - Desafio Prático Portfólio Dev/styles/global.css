@@ -1,6 +1,4 @@
 :root {
-  --color-bg: #17181d;
-
   --color-red: #e3646e;
   --color-purple: #bb72e9;
   --color-blue: #3996db;
@@ -36,11 +34,7 @@
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  background-color: var(--color-bg);
+  background-color: var(--color-gray-200);
   text-align: center;
 }
 

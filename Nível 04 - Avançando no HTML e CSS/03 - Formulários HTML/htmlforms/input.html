@@ -1,0 +1,84 @@
+<form id="meuform" enctype="multipart/form-data">
+  <!-- Atributos Gerais de Input -->
+  <input value="mayk" autocomplete="new-password" type="text" name="nome" />
+  <input value="mayk" size="10" type="text" name="nome" />
+  <input value="mayk" autofocus type="text" name="nome" />
+  <input value="mayk" disabled type="text" name="nome" />
+  <input value="mayk" readonly type="text" name="nome" />
+  <input value="mayk" required type="text" name="nome" />
+  <input value="mayk" placeholder="Coloque seu nome" type="text" name="nome" />
+
+  <!-- number -->
+  <input type="number" min="0" max="18" step="2" required placeholder="18" />
+
+  <!-- email -->
+  <input
+    type="email"
+    name="email"
+    multiple
+    minlength="10"
+    maxlength="255"
+    pattern=".+@rocketseat\.com"
+    required
+    title="Emails apenas @rocketseat.com"
+  />
+
+  <!-- password -->
+  <input
+    type="password"
+    minlength="8"
+    maxlength="12"
+    name="senha"
+    inputmode="numeric"
+    pattern="[#0-9a-fA-F]{4,8}"
+    title="Apenas Hexadecimal"
+  />
+
+  <!-- file -->
+  <!-- <input type="file" name="foto-perfil" multiple accept=".html"/> -->
+  <input type="file" name="foto-perfil" multiple accept="video/*" />
+  <!-- <input type="file" name="foto-perfil" multiple accept="image/*"/> -->
+  <!-- <input type="file" name="foto-perfil" multiple accept="audio/mp3"/> -->
+  <!-- <input type="file" name="foto-perfil" multiple accept="audio/*"/> -->
+  <!-- <input type="file" name="foto-perfil" multiple accept=".mkv"/> -->
+
+  <!-- range -->
+  <input type="range" name="total" min="20" max="200" step="20" value="40" />
+
+  <!-- color -->
+  <datalist id="colorpicker">
+    <option value="#FCAC00"></option>
+    <option value="#ACFCD0"></option>
+  </datalist>
+  <input type="color" name="color" value="#0FACAA" list="colorpicker" />
+
+  <!-- checkbox -->
+  <input type="checkbox" name="carro" value="fiat" checked />
+  <input type="checkbox" name="carro" value="audi" />
+
+  <!-- radio -->
+  <input type="radio" name="carro" value="fiat" />
+  <input type="radio" name="carro" value="audi" checked />
+
+  <!-- hidden -->
+  <input type="hidden" name="id" value="fdafef-adfek-3423kk" />
+
+  <!-- date -->
+  <input type="date" name="birth" />
+
+  <!-- week -->
+  <input type="week" name="birth" />
+
+  <!-- label -->
+  <label for="nome">Nome</label>
+  <input type="text" name="nome" id="nome" placeholder="Coloque seu nome" />
+
+  <label>
+    Nome
+    <input type="text" name="nome" placeholder="Coloque seu nome" />
+  </label>
+  
+  <button>Submit</button>
+</form>
+
+<input value="mayk" form="meuform" type="text" name="nome" />

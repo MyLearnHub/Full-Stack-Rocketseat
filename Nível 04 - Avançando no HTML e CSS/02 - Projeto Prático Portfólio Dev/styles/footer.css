@@ -1,0 +1,39 @@
+footer {
+  background-image: url(../assets/Background_Contacts.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 128px 0 200px;
+
+  #links {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 48px auto 0;
+
+    .social-button {
+      background-color: var(--gray-300);
+      padding: 18.5px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      p {
+        text-align: start;
+        flex: 1;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border: 1.5px solid var(--blue);
+
+        img {
+          filter: invert(58%) sepia(94%) saturate(2457%) hue-rotate(180deg)
+            brightness(92%) contrast(86%);
+        }
+      }
+    }
+  }
+}

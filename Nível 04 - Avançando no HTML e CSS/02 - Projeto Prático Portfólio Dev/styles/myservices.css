@@ -1,0 +1,20 @@
+section:nth-child(3) {
+  background-color: var(--gray-100);
+  padding: 88px 0 120px;
+
+  .card {
+    padding: 20px;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    text-align: start;
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font: var(--text-sm);
+      color: var(--gray-500);
+    }
+  }
+}

@@ -8,8 +8,6 @@
   --red: #e3646e;
   --purple: #bb72e9;
   --blue: #3996db;
-  --green: #82bc4f;
-  --yellow: #eabd5f;
 
   --gray-100: #0d0e11;
   --gray-200: #16181d;
@@ -59,6 +57,12 @@ h3 {
 
 p {
   font: var(--subtitle);
+}
+
+a {
+  font: var(--text-md);
+  text-decoration: none;
+  color: var(--gray-500);
 }
 
 .header {

@@ -4,6 +4,11 @@ footer {
   background-size: cover;
   padding: 128px 0 200px;
 
+  .header p:nth-child(3) {
+    font: var(--text-md);
+    color: var(--gray-500);
+  }
+
   #links {
     width: 400px;
     display: flex;
@@ -11,7 +16,7 @@ footer {
     gap: 16px;
     margin: 48px auto 0;
 
-    .social-button {
+    a {
       background-color: var(--gray-300);
       padding: 18.5px;
       border: 1.5px solid var(--gray-300);
@@ -21,6 +26,7 @@ footer {
       gap: 12px;
 
       p {
+        font: var(--text-md);
         text-align: start;
         flex: 1;
       }

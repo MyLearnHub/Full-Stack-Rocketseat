@@ -13,9 +13,7 @@ main {
         height: 96px;
         margin: 0 auto 56px;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 2px;
         border-radius: 50%;
         border: 2px solid var(--red);
 

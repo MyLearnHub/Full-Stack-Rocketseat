@@ -1,0 +1,30 @@
+aside {
+  background-image: url(../assets/Background.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 0.75rem;
+  padding: 2rem;
+
+  img {
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font: var(--logo);
+    color: var(--pink);
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font: 100 16px var(--font-family-opensans);
+    color: var(--text-heading);
+  }
+}
+
+main {
+  background-color: var(--shape-body);
+  border-radius: 0.75rem;
+  padding: 5rem auto;
+  overflow: auto;
+}

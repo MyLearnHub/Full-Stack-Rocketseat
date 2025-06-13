@@ -54,11 +54,20 @@
 body {
   height: 100vh;
   background-color: var(--shape-background);
-  font: var(--body-md);
-  color: var(--text-body);
+  font: var(--body-md-semibold);
+  color: var(--text-heading);
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 1.25rem;
   padding: 1.25rem;
   overflow: hidden;
+}
+
+h2 {
+  margin-bottom: 3.75rem;
+  font: var(--heading-md);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

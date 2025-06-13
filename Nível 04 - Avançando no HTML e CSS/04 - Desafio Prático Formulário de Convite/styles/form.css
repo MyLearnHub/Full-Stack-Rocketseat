@@ -1,0 +1,23 @@
+@import url(fields/index.css);
+
+fieldset {
+  border: none;
+
+  .title-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    legend {
+      font: var(--heading-sm);
+    }
+  }
+
+  label {
+    font: 700 14px var(--font-family-opensans);
+    color: var(--text-body);
+    display: inline-block;
+    margin: 1rem 0 0.75rem;
+  }
+}

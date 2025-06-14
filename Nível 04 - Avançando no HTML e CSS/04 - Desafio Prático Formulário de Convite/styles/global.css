@@ -45,16 +45,12 @@
   --body-md: 400 16px var(--font-family-opensans);
   --body-sm: 400 14px var(--font-family-opensans);
   --body-xs: 400 12px var(--font-family-opensans);
-
-  --body-md-semibold: 600 16px var(--font-family-opensans);
-  --body-sm-semibold: 600 14px var(--font-family-opensans);
-  --body-xs-semibold: 600 12px var(--font-family-opensans);
 }
 
 body {
   height: 100vh;
   background-color: var(--shape-background);
-  font: var(--body-md-semibold);
+  font: var(--body-md);
   color: var(--text-heading);
   display: grid;
   grid-template-columns: 400px 1fr;
@@ -71,4 +67,16 @@ h2 {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+hr {
+  border: 1px solid var(--input-stroke);
+  margin: 3rem 0 2.5rem;
+}
+
+.input-set {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
 }

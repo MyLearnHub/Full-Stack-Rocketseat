@@ -1,0 +1,43 @@
+.file-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  position: relative;
+
+  label {
+    all: unset;
+    background-color: var(--shape-button);
+    padding: 0.6875rem 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    span {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    &:hover,
+    &:focus-within {
+      background-color: var(--shape-hover);
+    }
+  }
+
+  input {
+    all: unset;
+    position: absolute;
+    top: 50%;
+    left: calc(7rem + 1rem);
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--input-placeholder);
+    font: var(--body-md);
+
+    &::-webkit-file-upload-button {
+      display: none;
+    }
+  }
+}

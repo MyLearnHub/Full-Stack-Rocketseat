@@ -7,21 +7,47 @@ textarea {
   background-color: var(--input-base);
   border-radius: 0.5rem;
   padding: 0 1rem;
-  font: 700 16px var(--font-family-opensans);
+  font: var(--body-md);
   color: var(--text-heading);
 
   &::placeholder {
     color: var(--input-placeholder);
   }
+
+  &:invalid {
+    border: 1px solid var(--danger);
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    
+    small {
+      font: var(--body-xs);
+      color: var(--danger);
+    }
+  }
+
+  &:not(:focus):valid + .error {
+    display: none;
+  }
 }
 
 input:focus,
 textarea:focus,
-input[type="date"]:focus-within {
+input[type="datetime-local"]:focus-within {
   border: 1px solid var(--brand-light);
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }
 
 textarea {
   height: 8.5rem;
+  width: 100%;
+  resize: none;
   padding: 1rem;
 }

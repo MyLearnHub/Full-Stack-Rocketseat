@@ -63,11 +63,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   .color {
     width: 1.75rem;
     height: 1.75rem;
     border-radius: 50%;
+  }
+
+  label {
+    margin: 1rem 0;
   }
 
   input,
@@ -80,17 +85,49 @@
     inset: 0;
   }
 
+  &:hover,
+  &:focus-within {
+    background-color: var(--shape-hover);
+  }
+
   &:has(:checked) {
     border: 2px solid var(--brand-light);
   }
 }
 
 .style {
-  width: 8.375rem;
   background-color: var(--shape-button);
+  border: 2px solid var(--shape-button);
   outline: 1px solid var(--input-stroke);
   position: relative;
-  padding: 4 4 8;
+  padding: 0.25rem 0.25rem 0;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  label {
+    all: unset;
+    margin: 0.5rem;
+    text-align: center;
+    font: var(--body-sm);
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: var(--shape-hover);
+    border: 2px solid var(--shape-hover);
+    outline: 1px solid var(--shape-hover);
+  }
+
+  &:has(:checked) {
+    border: 2px solid var(--brand-light);
+    outline: 1px solid transparent;
+  }
 }
 
 .radio-inner input,

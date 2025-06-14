@@ -49,7 +49,6 @@
               id="title"
               name="title"
               placeholder="Nome do evento"
-              required
             />
           </div>
 
@@ -61,9 +60,9 @@
                 id="start"
                 name="start"
                 placeholder="DD/MM/AAAA, --:--"
-                required
               />
             </div>
+
             <div class="input-wrapper flex-1">
               <label for="end">Fim</label>
               <input
@@ -71,7 +70,6 @@
                 id="end"
                 name="end"
                 placeholder="DD/MM/AAAA, --:--"
-                required
               />
             </div>
           </div>
@@ -103,6 +101,7 @@
                 </div>
               </div>
             </div>
+
             <div class="input-wrapper flex-1">
               <label for="location">Local</label>
               <input
@@ -110,7 +109,6 @@
                 id="location"
                 name="location"
                 placeholder="Link ou endereço"
-                required
               />
             </div>
           </div>
@@ -211,6 +209,7 @@
                   name="theme"
                   value="birthday"
                   id="birthday"
+                  checked
                 />
                 <img
                   src="assets/images/Image.png"
@@ -340,27 +339,41 @@
             </div>
           </div>
 
-          <div class="flex">
-            <div class="input-wrapper flex-1">
-              <label for="style">Estilo</label>
-              <input type="checkbox" id="style" name="style" />
-              <div id="runner">
-                <div id="ball"></div>
+          <div class="flex gap-16">
+            <div class="flex-1">
+              <label>Estilo</label>
+              <div class="switch-wrapper">
+                <div id="runner">
+                  <input
+                    type="checkbox"
+                    id="style"
+                    name="style"
+                    class="input-set"
+                  />
+                  <div id="ball"></div>
+                </div>
+                <label for="style" id="dark">Escuro</label>
+                <label for="style" id="light">Claro</label>
               </div>
             </div>
 
-            <div class="file-wrapper flex-1">
+            <div class="flex-2">
               <label>Foto de capa</label>
-              <div class="file-inner">
-                <div class="cover-button">
-                  <input type="file" name="cover" id="cover" />
+              <div class="file-wrapper">
+                <label for="cover">
                   <img
                     src="assets/icons/upload.svg"
                     alt="ícone de seta para cima"
                   />
-                  <label for="cover">Selecionar</label>
-                </div>
-                <label for="cover">Nenhum arquivo selecionado</label>
+                  <span>Selecionar</span>
+                </label>
+                <input
+                  type="file"
+                  name="cover"
+                  id="cover"
+                  accept="image/*"
+                  required
+                />
               </div>
             </div>
           </div>
@@ -377,63 +390,95 @@
 
           <div class="input-wrapper">
             <label for="name">Nome</label>
-            <input type="text" id="name" name="name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nome completo"
+              required
+            />
             <div class="error">
               <img
                 src="assets/icons/circle-alert.svg"
                 alt="ícone de alerta vermelho"
               />
-              <span>Campo obrigatório</span>
+              <small>Campo obrigatório</small>
             </div>
           </div>
 
-          <div class="input-wrapper">
-            <label for="mail">E-mail</label>
-            <input type="email" id="mail" name="mail" required />
+          <div class="flex gap-16">
+            <div class="input-wrapper flex-1">
+              <label for="mail">E-mail</label>
+              <input
+                type="email"
+                id="mail"
+                name="mail"
+                placeholder="exemplo@email.com"
+              />
+            </div>
+
+            <div class="input-wrapper flex-1">
+              <label for="phone">Telefone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(99) 99999-9999"
+              />
+            </div>
           </div>
 
-          <div class="input-wrapper">
-            <label for="phone">Telefone</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
+          <hr />
+
+          <footer>
+            <div class="checkbox-wrapper">
+              <div class="checkbox-image">
+                <img src="assets/icons/check.svg" alt="Ícone de Check" />
+                <input
+                  type="checkbox"
+                  name="terms"
+                  id="terms"
+                  class="input-set"
+                  required
+                />
+              </div>
+              <label for="terms">
+                Li e concordo com os <a href="#">Termos e Condições</a> e com a
+                <a href="#">Política de Privacidade</a>
+              </label>
+            </div>
+
+            <div class="checkbox-wrapper">
+              <div class="checkbox-image">
+                <img src="assets/icons/check.svg" alt="Ícone de Check" />
+                <input
+                  type="checkbox"
+                  name="email-promotion"
+                  id="email-promotion"
+                  class="input-set"
+                />
+              </div>
+              <label for="email-promotion">
+                Aceito receber atualizações e promoções por e-mail
+              </label>
+            </div>
+
+            <div class="checkbox-wrapper">
+              <div class="checkbox-image">
+                <img src="assets/icons/check.svg" alt="Ícone de Check" />
+                <input
+                  type="checkbox"
+                  name="phone-promotion"
+                  id="phone-promotion"
+                  class="input-set"
+                />
+              </div>
+              <label for="phone-promotion">
+                Aceito receber atualizações e promoções por SMS
+              </label>
+            </div>
+          </footer>
         </fieldset>
-
-        <hr />
-
-        <div class="terms-wrapper">
-          <div class="checkbox-wrapper">
-            <div class="checkbox-image"></div>
-            <input type="checkbox" name="terms" id="terms" required />
-            <label for="terms">
-              Li e concordo com os <a href="#">Termos e Condições</a> e com a
-              <a href="#">Política de Privacidade</a>
-            </label>
-          </div>
-
-          <div class="checkbox-wrapper">
-            <div class="checkbox-image"></div>
-            <input
-              type="checkbox"
-              name="email-promotion"
-              id="email-promotion"
-            />
-            <label for="email-promotion">
-              Aceito receber atualizações e promoções por e-mail
-            </label>
-          </div>
-
-          <div class="checkbox-wrapper">
-            <div class="checkbox-image"></div>
-            <input
-              type="checkbox"
-              name="phone-promotion"
-              id="phone-promotion"
-            />
-            <label for="phone-promotion">
-              Aceito receber atualizações e promoções por SMS
-            </label>
-          </div>
-        </div>
 
         <div class="button-wrapper">
           <button>

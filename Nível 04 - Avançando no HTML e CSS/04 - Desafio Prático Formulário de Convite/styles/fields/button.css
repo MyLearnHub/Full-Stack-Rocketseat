@@ -1,0 +1,23 @@
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    font: var(--body-md);
+    font-weight: 600;
+    padding: 0.8125rem 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    color: var(--text-heading);
+    background-color: var(--brand-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    &:hover {
+      background-color: var(--brand-mid);
+    }
+  }
+}

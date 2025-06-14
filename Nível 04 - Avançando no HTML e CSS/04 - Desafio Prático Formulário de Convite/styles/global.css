@@ -64,8 +64,9 @@ body {
 }
 
 h2 {
-  margin-bottom: 3.75rem;
   font: var(--heading-md);
+  width: 40.25rem;
+  margin: 0 auto 2.5rem;
 }
 
 ::-webkit-scrollbar {

@@ -1,5 +1,13 @@
 @import url(fields/index.css);
 
+form {
+  width: 40.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0 auto;
+}
+
 fieldset {
   border: none;
 
@@ -19,5 +27,28 @@ fieldset {
     color: var(--text-body);
     display: inline-block;
     margin: 1rem 0 0.75rem;
+  }
+}
+
+fieldset.customization .selection-wrapper {
+  all: unset;
+
+  label {
+    margin: 1rem 0;
+  }
+
+  .colors {
+    width: 40.25rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .styles {
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
 }

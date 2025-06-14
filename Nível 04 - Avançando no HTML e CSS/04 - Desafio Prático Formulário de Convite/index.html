@@ -114,6 +114,7 @@
               />
             </div>
           </div>
+
           <div class="textarea-wrapper">
             <label for="description">Descrição</label>
             <textarea
@@ -135,27 +136,76 @@
             <legend>Personalização</legend>
           </div>
 
-          <div class="input-wrapper">
+          <div class="selection-wrapper">
             <label>Cor principal</label>
-            <div class="radio-wrapper">
-              <input type="radio" name="color" value="brand" id="brand" />
-              <input type="radio" name="color" value="navy" id="navy" />
-              <input type="radio" name="color" value="purple" id="purple" />
-              <input type="radio" name="color" value="fuschia" id="fuschia" />
-              <input type="radio" name="color" value="pink" id="pink" />
-              <input type="radio" name="color" value="danger" id="danger" />
-              <input type="radio" name="color" value="orange" id="orange" />
-              <input type="radio" name="color" value="yellow" id="yellow" />
-              <input type="radio" name="color" value="lime" id="lime" />
-              <input type="radio" name="color" value="green" id="green" />
-              <input type="radio" name="color" value="cyan" id="cyan" />
+            <div class="colors">
+              <div class="color-button">
+                <div class="color brand"></div>
+                <input type="radio" name="color" value="brand" id="brand" />
+              </div>
+
+              <div class="color-button">
+                <div class="color navy"></div>
+                <input type="radio" name="color" value="navy" id="navy" />
+              </div>
+
+              <div class="color-button">
+                <div class="color purple"></div>
+                <input type="radio" name="color" value="purple" id="purple" />
+              </div>
+
+              <div class="color-button">
+                <div class="color fuschia"></div>
+                <input type="radio" name="color" value="fuschia" id="fuschia" />
+              </div>
+
+              <div class="color-button">
+                <div class="color pink"></div>
+                <input
+                  type="radio"
+                  name="color"
+                  value="pink"
+                  id="pink"
+                  checked
+                />
+              </div>
+
+              <div class="color-button">
+                <div class="color danger"></div>
+                <input type="radio" name="color" value="danger" id="danger" />
+              </div>
+
+              <div class="color-button">
+                <div class="color orange"></div>
+                <input type="radio" name="color" value="orange" id="orange" />
+              </div>
+
+              <div class="color-button">
+                <div class="color yellow"></div>
+                <input type="radio" name="color" value="yellow" id="yellow" />
+              </div>
+
+              <div class="color-button">
+                <div class="color lime"></div>
+                <input type="radio" name="color" value="lime" id="lime" />
+              </div>
+
+              <div class="color-button">
+                <div class="color green"></div>
+                <input type="radio" name="color" value="green" id="green" />
+              </div>
+
+              <div class="color-button">
+                <div class="color cyan"></div>
+                <input type="radio" name="color" value="cyan" id="cyan" />
+              </div>
             </div>
           </div>
 
-          <div class="input-wrapper">
+          <div class="selection-wrapper">
             <label>Tema do evento</label>
-            <div class="radio-wrapper">
-              <div class="radio-inner">
+            <div class="styles">
+              <div class="style">
                 <input
                   type="radio"
                   name="theme"
@@ -168,7 +218,7 @@
                 />
                 <label for="birthday">Aniversário</label>
               </div>
-              <div class="radio-inner">
+              <div class="style">
                 <input
                   type="radio"
                   name="theme"
@@ -181,7 +231,7 @@
                 />
                 <label for="infantile">Infantil</label>
               </div>
-              <div class="radio-inner">
+              <div class="style">
                 <input
                   type="radio"
                   name="theme"
@@ -195,7 +245,7 @@
                 <label for="graduation">Formatura</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input
                   type="radio"
                   name="theme"
@@ -209,7 +259,7 @@
                 <label for="marriage">Casamento</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input type="radio" name="theme" value="babytea" id="babytea" />
                 <img
                   src="assets/images/Image-4.png"
@@ -218,13 +268,13 @@
                 <label for="babytea">Chá de Bebê</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input type="radio" name="theme" value="bridal" id="bridal" />
                 <img src="assets/images/Image-5.png" alt="Foto de cozinha" />
                 <label for="bridal">Chá de Panela</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input
                   type="radio"
                   name="theme"
@@ -238,7 +288,7 @@
                 <label for="carnaval">Carnaval</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input type="radio" name="theme" value="easter" id="easter" />
                 <img
                   src="assets/images/Image-7.png"
@@ -247,7 +297,7 @@
                 <label for="easter">Páscoa</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input type="radio" name="theme" value="saojoao" id="saojoao" />
                 <img
                   src="assets/images/Image-8.png"
@@ -256,7 +306,7 @@
                 <label for="saojoao">São João</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input
                   type="radio"
                   name="theme"
@@ -270,7 +320,7 @@
                 <label for="halloween">Halloween</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input type="radio" name="theme" value="natal" id="natal" />
                 <img
                   src="assets/images/Image-10.png"
@@ -279,7 +329,7 @@
                 <label for="natal">Natal</label>
               </div>
 
-              <div class="radio-inner">
+              <div class="style">
                 <input type="radio" name="theme" value="others" id="others" />
                 <img
                   src="assets/images/Image-11.png"

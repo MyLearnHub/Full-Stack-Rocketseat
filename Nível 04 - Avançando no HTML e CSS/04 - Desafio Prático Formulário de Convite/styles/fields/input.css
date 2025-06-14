@@ -15,6 +15,12 @@ textarea {
   }
 }
 
+input:focus,
+textarea:focus,
+input[type="date"]:focus-within {
+  border: 1px solid var(--brand-light);
+}
+
 textarea {
   height: 8.5rem;
   padding: 1rem;

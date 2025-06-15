@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape</title>
+    <style>
+      div {
+        width: 50px;
+        height: 50px;
+        border: red solid;
+        background-color: aquamarine;
+
+        clip-path: circle();
+        clip-path: polygon(
+          50% 0%,
+          35% 62%,
+          100% 60%,
+          75% 100%,
+          25% 100%,
+          0% 60%,
+          10% 20%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+  </body>
+</html>

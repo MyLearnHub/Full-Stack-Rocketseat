@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entendendo a Sintaxe</title>
+
+    <style>
+      :root {
+        --bg-color: rebeccapurple;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: white;
+      }
+
+      /* Sintaxe maior - @media screen and (min-width: 576px) */
+      /* Named - @media (orientation: portrait) */
+      /* Sintaxe menor - @media (min-width: 576px) */
+      /* max width - @media (min-width: 20em) */
+
+      @media (min-width: 20em) {
+        :root {
+          --bg-color: orangered;
+        }
+      }
+
+      /* Selecionando o tema dark do usuário */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: orangered;
+        }
+      }
+
+      /* usando and */
+      @media (min-width: 400px) and (max-width: 500px) {
+        :root {
+          --bg-color: orangered;
+        }
+      }
+
+      /* usando range */
+      /* com um valor - @media (width >= 400px) */
+      /* entre 400px e 500px */
+      @media (400px < width < 500px) {
+        :root {
+          --bg-color: orangered;
+        }
+      }
+
+      /* usando not */
+      @media not (400px < width < 500px) {
+        :root {
+          --bg-color: orangered;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Title Goes here</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+      accusantium soluta quasi provident asperiores repudiandae, perferendis
+      cupiditate assumenda facilis officiis eaque necessitatibus enim
+      consectetur nisi voluptatem, aliquid laborum maiores sed.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  font: 14px/150% var(--font-family);
+}
+
+footer span:nth-child(1) {
+  margin-right: auto;
+}
+
+footer .links {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (width <= 42rem) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    & span:nth-child(1) {
+      margin-right: 0;
+    }
+  }
+}

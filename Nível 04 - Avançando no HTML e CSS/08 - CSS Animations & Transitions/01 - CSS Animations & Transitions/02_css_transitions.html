@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transitions 02</title>
+
+    <style>
+      body {
+        background-color: mediumpurple;
+      }
+
+      div {
+        background-color: white;
+        width: 4rem;
+        height: 4rem;
+        opacity: 0.6;
+
+        transition-property: opacity, transform;
+        transition-duration: 400ms;
+        /* transition-timing-function: linear; */
+        /* transition-timing-function: ease-in; */
+        /* transition-timing-function: ease-out; */
+        /* transition-timing-function: ease-in-out; */
+        /* transition-timing-function: cubic-bezier(0.7, -0.08, 0.85, 1.37); */
+        transition-timing-function: steps(2);
+        transition-timing-function: steps(5);
+      }
+
+      div:hover {
+        opacity: 1;
+        transform: translateX(20px);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transitions 03</title>
+
+    <style>
+      body {
+        background-color: mediumpurple;
+      }
+
+      div {
+        background-color: white;
+        width: 4rem;
+        height: 4rem;
+        opacity: 0.6;
+
+        /* transition: all 400ms ease; */
+        /* transition: all 400ms 2s ease; */ /* com delay */
+        /* transition: opacity 1s ease, transform 400ms linear; */ /* especificando propriedades */
+        transition: all 700ms; /* Apenas saída */
+      }
+
+      div:hover {
+        opacity: 1;
+        transform: translateX(20px);
+        transition: all 100ms; /* Só funciona para a entrada */
+      }
+
+      @media (prefers-reduced-motion) {
+        div {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

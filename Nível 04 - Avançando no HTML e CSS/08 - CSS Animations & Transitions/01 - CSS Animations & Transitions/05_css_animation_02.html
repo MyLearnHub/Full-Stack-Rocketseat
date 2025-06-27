@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations 02</title>
+
+    <style>
+      button {
+        background-color: deeppink;
+        color: white;
+        width: 4rem;
+        height: 4rem;
+        border: none;
+        border-radius: 50%;
+
+        animation-name: move;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        /* animation-fill-mode: forwards; */
+        /* animation-fill-mode: backwards; */
+        animation-fill-mode: both;
+
+        /* animation-direction: reverse; */
+        /* animation-direction: alternate; */
+        /* animation-direction: alternate-reverse; */
+
+        /* animation-iteration-count: 2; */
+        /* animation-iteration-count: 3; */
+        /* animation-iteration-count: infinite; */
+
+        /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+        /* animation-timing-function: ease; */
+        /* animation-timing-function: ease-in; */
+        /* animation-timing-function: ease-in-out; */
+        /* animation-timing-function: linear; */
+
+        animation: move 1s 1s both infinite alternate ease, fade 100ms 10;
+      }
+
+      button:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes move {
+        100% {
+          transform: translateX(400px);
+        }
+      }
+
+      @keyframes fade {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button>Fala, Dev!</button>
+  </body>
+</html>

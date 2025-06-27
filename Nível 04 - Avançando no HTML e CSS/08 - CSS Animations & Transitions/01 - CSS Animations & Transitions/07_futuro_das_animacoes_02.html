@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuro das animações 02</title>
+
+    <style>
+      body {
+        max-width: 80%;
+        margin-inline: auto;
+      }
+
+      /* body::before {
+        content: "top";
+        background-color: rgb(255 0 0 / 0.2);
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border: 1px dashed red;
+        box-sizing: border-box;
+      }
+
+      body::after {
+        content: "bottom";
+        background-color: rgb(0 255 0 / 0.2);
+        height: 200px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border: 1px dashed red;
+        box-sizing: border-box;
+      } */
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      article > img {
+        animation: fade linear both;
+        animation-timeline: view();
+        /* animation-timeline: view(100px 200px); */
+        /* animation-timeline: view(200px 100px); */
+        /* animation-timeline: view(200px 10px); */
+        /* animation-timeline: view(50% 10px); */
+        /* animation-timeline: view(10% 10px); */
+        /* animation-timeline: view(90% 10px); */
+        /* animation-timeline: view(90%); */ /* Um valor para ambos */
+        /* animation-timeline: view(10px); */
+        /* animation-timeline: view(100px); */
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+          scale: 0.8;
+        }
+
+        100% {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Title goes here</h1>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+      accusantium soluta quasi provident asperiores repudiandae, perferendis
+      cupiditate assumenda facilis officiis eaque necessitatibus enim
+      consectetur nisi voluptatem, aliquid laborum maiores sed.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+      accusantium soluta quasi provident asperiores repudiandae, perferendis
+      cupiditate assumenda facilis officiis eaque necessitatibus enim
+      consectetur nisi voluptatem, aliquid laborum maiores sed.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+      accusantium soluta quasi provident asperiores repudiandae, perferendis
+      cupiditate assumenda facilis officiis eaque necessitatibus enim
+      consectetur nisi voluptatem, aliquid laborum maiores sed.
+    </p>
+
+    <article>
+      <h2>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+        reprehenderit vel ea quis nihil unde
+      </h2>
+
+      <img
+        src="https://images.unsplash.com/photo-1715604535941-3a38ad63bd79?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+      />
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+        accusantium soluta quasi provident asperiores repudiandae, perferendis
+        cupiditate assumenda facilis officiis eaque necessitatibus enim
+        consectetur nisi voluptatem, aliquid laborum maiores sed.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+        accusantium soluta quasi provident asperiores repudiandae, perferendis
+        cupiditate assumenda facilis officiis eaque necessitatibus enim
+        consectetur nisi voluptatem, aliquid laborum maiores sed.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+        accusantium soluta quasi provident asperiores repudiandae, perferendis
+        cupiditate assumenda facilis officiis eaque necessitatibus enim
+        consectetur nisi voluptatem, aliquid laborum maiores sed.
+      </p>
+    </article>
+
+    <h3>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+      accusantium soluta quasi provident asperiores repudiandae, perferendis
+      cupiditate assumenda facilis officiis eaque necessitatibus enim
+      consectetur nisi voluptatem, aliquid laborum maiores sed.
+    </h3>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+      accusantium soluta quasi provident asperiores repudiandae, perferendis
+      cupiditate assumenda facilis officiis eaque necessitatibus enim
+      consectetur nisi voluptatem, aliquid laborum maiores sed.
+    </p>
+  </body>
+</html>

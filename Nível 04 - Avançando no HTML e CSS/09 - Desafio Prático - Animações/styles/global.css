@@ -1,0 +1,88 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink-light: #c59dd2;
+  --pink-base: #9547a5;
+  --pink-dark: #7d298a;
+  --pink-low: #3f0f41;
+  --blue-light: #73b6d2;
+  --blue-base: #358bb9;
+  --blue-mid: #2374a4;
+  --blue-dark: #144a72;
+  --blue-low: #08233c;
+  --shape-stroke: #002347;
+  --shape-hover: #001933;
+  --shape-base: #000f1f;
+  --shape-background: #00050a;
+  --text-title: #f8fbfb;
+  --text-body: #e2e7e9;
+  --text-label: #bac6c9;
+
+  --font-family: "Raleway", sans-serif;
+
+  --title-lg: 700 48px var(--font-family);
+  --title-md: 700 40px var(--font-family);
+  --title-sm: 700 32px var(--font-family);
+  --title-xs: 700 16px var(--font-family);
+  --subtitle: 500 32px/200% var(--font-family);
+  --body-lg-bold: 700 20px/140% var(--font-family);
+  --body-md-bold: 700 16px/140% var(--font-family);
+  --body-sm-bold: 700 14px/140% var(--font-family);
+  --body-xs-bold: 700 12px/140% var(--font-family);
+  --body-lg: 400 20px/140% var(--font-family);
+  --body-md: 400 16px/140% var(--font-family);
+  --body-sm: 400 14px/140% var(--font-family);
+  --body-xs: 400 12px/140% var(--font-family);
+  --button: 700 14px var(--font-family);
+  --link: 500 14px var(--font-family);
+  --tag: 700 10px var(--font-family); /* uppercase e 5% de espacamento */
+}
+
+body {
+  background-color: var(--shape-background);
+  color: var(--text-body);
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: var(--pink-dark);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font: var(--button);
+  color: var(--text-title);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--pink-base);
+    width: 1rem;
+    height: 1rem;
+    inset: 0;
+    scale: 0;
+    border-radius: 50%;
+    margin: auto;
+    transition: scale 0.45s ease;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    scale: 6;
+  }
+}
+
+h1 {
+  font: var(--title-lg);
+  color: var(--text-title);
+}

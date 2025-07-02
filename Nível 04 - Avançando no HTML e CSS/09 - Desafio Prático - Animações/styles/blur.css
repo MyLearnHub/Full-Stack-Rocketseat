@@ -1,0 +1,41 @@
+#blur-container {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+
+  & > div {
+    background-color: var(--pink-low);
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(31.25rem); 
+    z-index: -1;
+  }
+
+  & > div:nth-child(1) {
+    width: 23.5rem;
+    height: 23.5rem;
+    top: 30.875rem;
+    left: -16.1875rem;
+  }
+
+  & > div:nth-child(2) {
+    width: 15.0625rem;
+    height: 15.0625rem;
+    top: 22.875rem;
+    right: -6.0625rem;
+  }
+
+  & > div:nth-child(3) {
+    width: 33.625rem;
+    height: 33.625rem;
+    top: 61.6875rem;
+    left: 14.5rem;
+  }
+
+  & > div:nth-child(4) {
+    width: 30.6875rem;
+    height: 30.6875rem;
+    top: 45.12500rem;
+    right: -13.87500rem;
+  }
+}

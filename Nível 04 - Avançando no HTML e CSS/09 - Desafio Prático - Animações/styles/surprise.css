@@ -1,0 +1,85 @@
+#surprise {
+  padding: 14.6874rem 0 0;
+  height: 99.125rem;
+
+  & header {
+    & h2 {
+      padding-bottom: 0.3125rem;
+      width: fit-content;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      & img {
+        width: 2rem;
+        height: 2rem;
+        filter: drop-shadow(0 0 .75rem #8f3b9e80);
+      }
+    }
+  }
+
+  & #book {
+    margin-top: 5.5rem;
+    position: relative;
+
+    & img,
+    span {
+      position: absolute;
+    }
+
+    & img[src*="bookcastle"] {
+      width: 29.1875rem;
+      top: 8.375rem;
+      right: 51%;
+      transform: translateX(50%);
+      z-index: 1;
+    }
+
+    & img[src*="bookmark"] {
+      width: 10.75rem;
+      top: 10rem;
+      right: 30rem;
+    }
+
+    & img[src*="pin"] {
+      width: 15.875rem;
+      top: 28rem;
+      right: 40rem;
+    }
+
+    & img[src*="arrow-1"] {
+      top: 18rem;
+      right: 38rem;
+    }
+
+    & img[src*="arrow-2"] {
+      top: 28rem;
+      right: 46rem;
+    }
+
+    & img[src*="arrow-3"] {
+      top: 30rem;
+      right: 33rem;
+    }
+
+    & span {
+      color: var(--text-title);
+    }
+
+    & span:nth-child(8) {
+      top: 16rem;
+      right: 45rem;
+    }
+
+    & span:nth-child(9) {
+      top: 26rem;
+      right: 46rem;
+    }
+
+    & span:nth-child(10) {
+      top: 40rem;
+      right: 36.7rem;
+    }
+  }
+}

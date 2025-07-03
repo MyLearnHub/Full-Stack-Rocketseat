@@ -35,7 +35,14 @@
   & > div:nth-child(4) {
     width: 30.6875rem;
     height: 30.6875rem;
-    top: 45.12500rem;
-    right: -13.87500rem;
+    top: 45.125rem;
+    right: -13.875rem;
+  }
+
+  & > div:nth-child(5) {
+    width: 58.125rem;
+    height: 58.125rem;
+    top: 118.125rem;
+    left: 15.9375rem;
   }
 }

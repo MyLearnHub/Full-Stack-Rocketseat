@@ -1,0 +1,95 @@
+#signature {
+  background: url("../assets/signature/signature-background.png") no-repeat
+    center center;
+  background-size: cover;
+  border: 2px solid red;
+
+  & h2 {
+    margin-top: 12.125rem;
+  }
+
+  & #pricing {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+    text-align: left;
+
+    & .card {
+      background-color: var(--shape-hover);
+      width: 18rem;
+      height: 26rem;
+      padding: 2rem 2rem 1.75rem;
+      border-radius: 1.75rem;
+      position: relative;
+
+      &:nth-child(1) h3 {
+        color: var(--pink-light);
+      }
+
+      & header {
+        & h3 {
+          color: var(--text-title);
+        }
+
+        & strong {
+          display: block;
+          margin: 1.5rem 0 0.5rem;
+          font: var(--title-md);
+
+          & span {
+            font: var(--title-xs);
+          }
+        }
+
+        & p {
+          font: var(--body-sm);
+          color: var(--text-label);
+        }
+      }
+
+      & .details {
+        margin: 4.375rem 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        & img {
+          width: 0.87875rem;
+        }
+
+        & p {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font: var(--body-xs);
+        }
+      }
+
+      & img[src*="bunny"] {
+        position: absolute;
+        top: -3.120625rem;
+        left: 2rem;
+      }
+
+      & button + span {
+        position: absolute;
+        background-color: var(--shape-stroke);
+        font: var(--tag);
+        letter-spacing: 0.05em;
+        padding: 0.5625rem 1.25rem;
+        border-radius: 999px;
+        top: 1.494375rem;
+        right: 1.526875rem;
+      }
+
+      & button {
+        width: 100%;
+
+        &:hover::before {
+          scale: 14;
+        }
+      }
+    }
+  }
+}

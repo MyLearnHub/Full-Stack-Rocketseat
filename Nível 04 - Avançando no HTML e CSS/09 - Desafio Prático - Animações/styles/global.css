@@ -41,7 +41,7 @@
   --body-xs: 400 12px/140% var(--font-family);
   --button: 700 14px var(--font-family);
   --link: 500 14px var(--font-family);
-  --tag: 700 10px var(--font-family); /* uppercase e 5% de espacamento */
+  --tag: 700 10px var(--font-family);
 }
 
 body {
@@ -95,4 +95,9 @@ h1 {
 
 h2 {
   font: var(--title-sm);
+}
+
+h3 {
+  font: var(--title-xs);
+  color: var(--blue-light);
 }

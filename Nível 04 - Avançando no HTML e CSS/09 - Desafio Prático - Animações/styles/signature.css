@@ -2,6 +2,7 @@
   background: url("../assets/signature/signature-background.png") no-repeat
     center center;
   background-size: cover;
+  height: 77.125rem;
   position: relative;
 
   & h2 {
@@ -9,96 +10,135 @@
     margin-bottom: 3.5rem;
   }
 
-
   & #pricing {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
+    width: 65.625rem;
+    height: 37.875rem;
+    margin-inline: auto;
     text-align: left;
     padding-top: 5.130625rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
 
-    & .card {
-      background-color: var(--shape-hover);
-      width: 18rem;
-      height: 26rem;
-      padding: 2rem 2rem 1.75rem;
-      border-radius: 1.75rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    & .card-container:nth-child(2) {
+      z-index: 2;
+    }
 
-      &:nth-child(2) h3 {
-        color: var(--pink-light);
-      }
+    .card-container {
+      position: absolute;
+      top: 5.625rem;
 
-      & header {
-        & h3 {
-          color: var(--blue-light);
-        }
+      & .card {
+        background-color: var(--shape-hover);
+        width: 18rem;
+        height: 26rem;
+        padding: 2rem 2rem 1.75rem;
+        border-radius: 1.75rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-        & strong {
-          display: block;
-          margin: 1.5rem 0 0.5rem;
-          font: var(--title-md);
+        & header {
+          & h3 {
+            color: var(--blue-light);
+          }
 
-          & span {
-            font: var(--title-xs);
+          & strong {
+            display: block;
+            margin: 1.5rem 0 0.5rem;
+            font: var(--title-md);
+
+            & span {
+              font: var(--title-xs);
+            }
+          }
+
+          & p {
+            font: var(--body-sm);
+            color: var(--text-label);
           }
         }
 
-        & p {
-          font: var(--body-sm);
-          color: var(--text-label);
-        }
-      }
-
-      & .details {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-
-        & img {
-          width: 0.87875rem;
-          filter: drop-shadow(0 0 0.75rem #8f3b9e80);
-        }
-
-        & p {
+        & .details {
           display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font: var(--body-xs);
+          flex-direction: column;
+          gap: 0.75rem;
+
+          & img {
+            width: 0.87875rem;
+            filter: drop-shadow(0 0 0.75rem #8f3b9e80);
+          }
+
+          & p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font: var(--body-xs);
+          }
+        }
+
+        & img[src*="bunny"] {
+          position: absolute;
+          top: -3.120625rem;
+          left: 2rem;
+        }
+
+        & img + span {
+          position: absolute;
+          background-color: var(--shape-stroke);
+          font: var(--tag);
+          letter-spacing: 0.05em;
+          padding: 0.5625rem 1.25rem;
+          border-radius: 999px;
+          top: 1.494375rem;
+          right: 1.526875rem;
+        }
+
+        & button {
+          width: 100%;
+          margin-top: 1.5rem;
+
+          &:hover::before {
+            scale: 14;
+          }
+        }
+
+        & #star-1 {
+          width: 1.625rem;
+          top: -1.1875rem;
+          left: calc(-1.6725rem + -1.625rem);
+        }
+
+        & #star-2 {
+          width: 0.81625rem;
+          top: 1.22125rem;
+          left: calc(-2.62125rem + -0.81625rem);
+        }
+
+        & #star-3 {
+          width: 1.45125rem;
+          bottom: calc(-0.5rem + -1.45125rem);
+          right: calc(-1.021875rem + -1.45125rem);
+        }
+
+        & #star-4 {
+          width: 0.703125rem;
+          bottom: calc(-1.290625rem + -0.703125rem);
+          right: 0.296875rem;
         }
       }
 
-      & img[src*="bunny"] {
-        position: absolute;
-        top: -3.120625rem;
-        left: 2rem;
+      &:nth-child(2) .card h3 {
+        color: var(--pink-light);
       }
 
-      & img + span {
-        position: absolute;
-        background-color: var(--shape-stroke);
-        font: var(--tag);
-        letter-spacing: 0.05em;
-        padding: 0.5625rem 1.25rem;
-        border-radius: 999px;
-        top: 1.494375rem;
-        right: 1.526875rem;
-      }
-
-      & button {
-        width: 100%;
-        margin-top: 1.5rem;
-
-        &:hover::before {
-          scale: 14;
-        }
-      }
-
-      &:not(:nth-child(2)) button {
+      &:not(:nth-child(2)) .card button {
         background-color: var(--blue-dark);
+
+        &::before {
+          background-color: var(--blue-mid);
+        }
 
         &:hover::before {
           background-color: var(--blue-mid);
@@ -108,30 +148,6 @@
       &:nth-child(1) img:not(img[src*="blue"]),
       &:nth-child(3) img:not(img[src*="blue"]) {
         position: absolute;
-      }
-
-      #star-1 {
-        width: 1.625rem;
-        top: -1.1875rem;
-        left: calc(-1.6725rem + -1.625rem);
-      }
-
-      #star-2 {
-        width: 0.81625rem;
-        top: 1.22125rem;
-        left: calc(-2.62125rem + -0.81625rem);
-      }
-
-      #star-3 {
-        width: 1.45125rem;
-        bottom: calc(-0.5rem + -1.45125rem);
-        right: calc(-1.021875rem + -1.45125rem);
-      }
-
-      #star-4 {
-        width: 0.703125rem;
-        bottom: calc(-1.290625rem + -0.703125rem);
-        right: 0.296875rem;
       }
     }
   }

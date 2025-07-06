@@ -45,4 +45,12 @@
     top: 118.125rem;
     left: 15.9375rem;
   }
+
+  & > div:nth-child(6) {
+    background-color: var(--shape-base);
+    width: 59rem;
+    height: 59rem;
+    top: 200.6875rem;
+    left: 15.5rem;
+  }
 }

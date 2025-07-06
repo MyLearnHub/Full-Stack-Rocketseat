@@ -101,3 +101,23 @@ h3 {
   font: var(--title-xs);
   color: var(--blue-light);
 }
+
+ul[role="list"] {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  & li {
+    cursor: pointer;
+    font: var(--link);
+    color: var(--blue-light);
+    transition: 300ms ease-in-out;
+    padding-block: 0.25rem;
+
+    &:hover {
+      color: var(--text-body);
+    }
+  }
+}

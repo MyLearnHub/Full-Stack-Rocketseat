@@ -14,9 +14,16 @@
   & header {
     margin-top: 10.25rem;
 
+    & h1 {
+      opacity: 0;
+      animation: appear-gradient 1.6s 1ms ease-in-out both;
+    }
+
     & p {
       margin-top: 2rem;
       font: var(--body-lg);
+      opacity: 0;
+      animation: appear 800ms 801ms ease-in-out both;
     }
   }
 
@@ -44,8 +51,8 @@
     & > div {
       width: 100%;
       display: flex;
-      justify-content: space-between
-    } 
+      justify-content: space-between;
+    }
 
     & > div img:nth-child(1) {
       width: 4.545625rem;
@@ -67,7 +74,25 @@
     height: 59.25rem;
     inset: 0;
     z-index: -1;
-    background: url("../assets/hero/hero-background.png") no-repeat center;
+    background: url("../assets/hero/hero-background.png") no-repeat center center;
     background-size: cover;
+    opacity: 0;
+    animation: appear-gradient 1.6s 1ms ease-in-out both;
+  }
+}
+
+@keyframes appear-gradient {
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }

@@ -40,7 +40,7 @@
     }
 
     & img[src*="bookmark"] {
-      width: 10.75rem;
+      height: 33.5rem;
       top: 10rem;
       right: 30rem;
     }
@@ -71,13 +71,13 @@
     }
 
     & span:nth-child(8) {
-      top: 16rem;
+      top: 15.5rem;
       right: 45rem;
     }
 
     & span:nth-child(9) {
-      top: 26rem;
-      right: 46rem;
+      top: 25.5rem;
+      right: 45.7rem;
     }
 
     & span:nth-child(10) {
@@ -87,32 +87,27 @@
 
     &:hover {
       & img[src*="purple"] {
-        transform: translate(21.203125rem, 0.9475rem) rotate(22deg);
+        transform: translate(16.5rem, 0.9475rem) rotate(22deg);
       }
-      
+
       & img[src*="yellow"] {
-        transform: translate(10.875rem, 5.5rem) rotate(22deg);
+        transform: translate(9.5rem, -6rem) rotate(12deg);
       }
 
       & img[src*="pin"] {
-        width: 15.875rem;
-        top: 28rem;
-        right: 40rem;
+        transform: translate(-12rem, 7rem) rotate(-8deg);
       }
 
       & img[src*="arrow-1"] {
-        top: 18rem;
-        right: 38rem;
+        transform: translate(-17rem, -11rem) rotate(-0deg);
       }
 
       & img[src*="arrow-2"] {
-        top: 28rem;
-        right: 46rem;
+        transform: translate(-17.5rem, 2rem);
       }
 
       & img[src*="arrow-3"] {
-        top: 30rem;
-        right: 33rem;
+        transform: translate(15.2rem, 12.5rem);
       }
 
       & span {
@@ -120,18 +115,15 @@
       }
 
       & span:nth-child(8) {
-        top: 16rem;
-        right: 45rem;
+        transform: translate(-17rem, -11rem) rotate(-0deg);
       }
 
       & span:nth-child(9) {
-        top: 26rem;
-        right: 46rem;
+        transform: translate(-17.5rem, 2rem);
       }
 
       & span:nth-child(10) {
-        top: 40rem;
-        right: 36.7rem;
+        transform: translate(15.2rem, 13rem);
       }
     }
   }

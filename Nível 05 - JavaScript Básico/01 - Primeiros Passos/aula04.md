@@ -1,3 +1,10 @@
+# Conectando JavaScript
+
+---
+
+## index.html
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -6,18 +13,25 @@
     <title>Aulas de JavaScript</title>
 
     <!-- Conexão dentro do head (Não recomendado) -->
-    <!-- <script>
+    <script>
       console.log("Paulo Alvares");
     </script>
-    <script src="./scripts.js"></script> -->
+    <script src="./scripts.js"></script>
   </head>
   <body>
     <!-- ELEMENTOS HTML -->
 
     <!-- Conexão dentro do body (Recomendado) -->
-    <!-- <script>
+    <script>
       console.log("Paulo");
-    </script> -->
+    </script>
     <script src="./scripts.js"></script>
   </body>
 </html>
+```
+
+## scripts.js
+
+```js
+console.log("Paulo Alvares");
+```

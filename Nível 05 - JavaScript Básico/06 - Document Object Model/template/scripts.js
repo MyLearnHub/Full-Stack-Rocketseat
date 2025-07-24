@@ -30,12 +30,74 @@
 // Aula 04 - Query Selector
 
 // Acessa o elemento pelo seletor ID
-const guest = document.querySelector("#guest-2");
-console.log(guest);
+// const guest = document.querySelector("#guest-2");
+// console.log(guest);
 
 // Acessa o elemento pelo seletor class
 // const guests = document.querySelector(".guest");
 
 // Retorna todos os elementos encontrados pelo query
-const guests = document.querySelectorAll(".guest");
-console.log(guests);
+// const guests = document.querySelectorAll(".guest");
+// console.log(guests);
+
+// ---------------------------------------
+
+// Aula 05 - Manipulando Elementos
+
+// const guest = document.querySelector("#guest-1");
+
+// Retorna o conteúdo como texto.
+// console.log(guest.textContent);
+// guest.textContent = "Maria";
+
+// console.log(guest.textContent); // Retorna o conteúdo visível e oculto.
+// console.log(guest.innerText); // Retorna somente o conteúdo visível.
+// console.log(guest.innerHTML); // Retorna o HTML como texto.
+
+// ---------------------------------------
+
+// Aula 06 - Alterando Estilos
+
+// const input = document.querySelector("#name");
+
+// Adiciona a classe.
+// input.classList.add("input-error");
+
+// Remove a classe.
+// input.classList.remove("input-error");
+
+// Se não tiver a classe adiciona. Se tem, remove.
+// input.classList.toggle("input-error");
+
+// const button = document.querySelector("button");
+
+// Modificar as propriedades css do elemento.
+// button.style.backgroundColor = "red";
+
+// ---------------------------------------
+
+// Aula 07 - Criando Elementos
+
+// const guests = document.querySelector("ul");
+
+// const newGuest = document.createElement("li");
+// newGuest.classList.add("guest");
+
+// const guestName = document.createElement("span");
+
+// guestName.textContent = "Diego";
+
+// const guestSurname = document.createElement("span");
+// guestSurname.textContent = "Fernandes";
+
+// // Adiciona após o último filho.
+// // newGuest.append(guestName, guestSurname);
+
+// // Adiciona antes do primeiro filho.
+// // newGuest.prepend(guestSurname);
+
+// // É mais simples que o append e aceita apenas um argumento.
+// newGuest.appendChild(guestName);
+
+// // guests.appendChild(newGuest);
+// guests.prepend(newGuest);

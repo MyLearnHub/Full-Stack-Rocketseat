@@ -101,3 +101,39 @@
 
 // // guests.appendChild(newGuest);
 // guests.prepend(newGuest);
+
+// ---------------------------------------
+
+// Aula 08 - Manipulando Atributos
+
+// const input = document.querySelector("input");
+
+// // Adicionar ou atualizar um atributo.
+// // input.setAttribute("disabled", true);
+// // input.setAttribute("type", "file");
+
+// // Remover um atributo.
+// input.removeAttribute("id");
+
+// ---------------------------------------
+
+// Aula 09 - Eventos
+
+// window.addEventListener("load", () => {
+//   console.log("A página foi carregada!");
+// });
+
+// addEventListener("click", (event) => {
+//   event.preventDefault();
+
+//   // Retorna todas as informações do evento.
+//   // console.log(event);
+
+//   // Retorna o elemento clicado.
+//   console.log(event.target);
+
+//   // Retorna o textContent do elemento clicado.
+//   console.log(event.target.textContent);
+// });
+
+// ---------------------------------------

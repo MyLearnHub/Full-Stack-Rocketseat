@@ -74,34 +74,34 @@
 
 // Aula 15 - Manipulando Valor do Input
 
-const input = document.querySelector("input");
-const form = document.querySelector("form");
+// const input = document.querySelector("input");
+// const form = document.querySelector("form");
 
-/*  input.addEventListener("input", () => {
-  const value = input.value;
+// /*  input.addEventListener("input", () => {
+//   const value = input.value;
   
-  const regex = /\D+/g;
+//   const regex = /\D+/g;
   
-  // Retorna o padrão encontrado na string.
-  // console.log(value.match(regex));
+//   // Retorna o padrão encontrado na string.
+//   // console.log(value.match(regex));
 
-  // Testa se atende o padrão.
-  // const isValid = regex.test(value);
-  // console.log(isValid);
-}); */
+//   // Testa se atende o padrão.
+//   // const isValid = regex.test(value);
+//   // console.log(isValid);
+// }); */
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const value = input.value;
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const value = input.value;
 
-  const regex = /\D+/g;
+//   const regex = /\D+/g;
 
-  if (regex.test(value)) {
-    console.log(value);
-  } else {
-    alert("Valor inválido. Digite corretamente!");
-  }
+//   if (regex.test(value)) {
+//     console.log(value);
+//   } else {
+//     alert("Valor inválido. Digite corretamente!");
+//   }
 
-  // const value = input.value.replace(regex, "");
-  // console.log(value);
-});
+//   // const value = input.value.replace(regex, "");
+//   // console.log(value);
+// });

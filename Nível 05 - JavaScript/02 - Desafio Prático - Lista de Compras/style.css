@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-primary: #f4f5fb;
+  --background-secondary: #ffffff;
+  --color-brand: #ca3884;
+  --color-brand-hover: #a52c6b;
+  --color-danger: #c93847;
+  --content-primary: #080b12;
+  --content-secondary: #374151;
+  --content-tertiary: #9ca3af;
+  --always-white: #ffffff;
+  --border-primary: #d1d5db;
+  --border-hover: #b9c2d0;
+
+  --font-family: "Inter", sans-serif;
+
+  --title: 700 24px/32px var(--font-family);
+  --label: 600 16px/20px var(--font-family);
+  --paragraph: 500 16px/20px var(--font-family);
+  --input: 400 16px/20px var(--font-family);
+  --link: 500 14px/16px var(--font-family);
+}
+
+body {
+  font: var(--label);
+  background-color: var(--background-primary);
+  overflow: hidden;
+  padding: 1.5625rem 23.125rem;
+
+  & > img {
+    display: block;
+    margin: auto;
+  }
+}
+
+input {
+  background-color: var(--background-primary);
+  font: var(--input);
+  border: 2px solid var(--border-primary);
+  border-radius: 0.75rem;
+  padding: 0.6875rem 1.125rem;
+  flex: 1;
+  outline: none;
+
+  &::placeholder {
+    color: var(--content-tertiary);
+  }
+
+  &:hover {
+    border: 2px solid var(--border-hover);
+  }
+
+  &:focus,
+  &:active {
+    border: 2px solid var(--color-brand);
+  }
+}
+
+button {
+  background-color: var(--color-brand);
+  font: var(--label);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--always-white);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-brand-hover);
+  }
+}
+
+main {
+  margin-block: 3.875rem 2.25rem;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & a {
+      font: var(--link);
+      color: var(--color-brand);
+      text-decoration: none;
+      cursor: pointer;
+
+      & > img {
+        margin-right: 5px;
+      }
+    }
+
+    & h1 {
+      font: var(--title);
+      color: var(--content-primary);
+    }
+  }
+
+  form {
+    width: 100%;
+    margin-block: 2.75rem 2.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+}

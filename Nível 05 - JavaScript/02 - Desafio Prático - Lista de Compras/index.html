@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quicklist</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <img src="assets/logo.svg" alt="Logo da Quicklist" />
+
+    <main>
+      <header>
+        <a
+          ><img
+            src="assets/icons/arrow-left.svg"
+            alt="Ícone de seta para esquerda"
+          />Voltar</a
+        >
+
+        <h1>Compras da semana</h1>
+      </header>
+
+      <form>
+        <input
+          type="text"
+          name="product"
+          id="product"
+          placeholder="Adicionar item"
+          required
+        />
+        <button type="submit">Adicionar</button>
+      </form>
+
+      <section>
+        <div class="item-container">
+          <div class="item-checkbox">
+            <input type="checkbox" name="item" id="item" />
+            <label for="item">Pão de forma</label>
+          </div>
+          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+        </div>
+
+        <div class="item-container">
+          <div class="item-checkbox">
+            <input type="checkbox" name="item" id="item" />
+            <label for="item">Café preto</label>
+          </div>
+          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+        </div>
+
+        <div class="item-container">
+          <div class="item-checkbox">
+            <input type="checkbox" name="item" id="item" />
+            <label for="item">Suco de laranja</label>
+          </div>
+          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+        </div>
+
+        <div class="item-container">
+          <div class="item-checkbox">
+            <input type="checkbox" name="item" id="item" />
+            <label for="item">Bolacha</label>
+          </div>
+          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+        </div>
+      </section>
+    </main>
+
+    <div id="modal">
+      <div id="modal-message">
+        <img src="assets/icons/warning.svg" alt="Ícone de aviso" />
+        <p>O item foi removido da lista</p>
+      </div>
+      <img src="assets/icons/close.svg" alt="Ícone de fechar" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

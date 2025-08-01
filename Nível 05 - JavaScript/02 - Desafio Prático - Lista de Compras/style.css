@@ -21,7 +21,7 @@
 
   --title: 700 24px/32px var(--font-family);
   --label: 600 16px/20px var(--font-family);
-  --paragraph: 500 16px/20px var(--font-family);
+  --paragraph: 500 16px/24px var(--font-family);
   --input: 400 16px/20px var(--font-family);
   --link: 500 14px/16px var(--font-family);
 }
@@ -30,7 +30,7 @@ body {
   font: var(--label);
   background-color: var(--background-primary);
   overflow: hidden;
-  padding: 1.5625rem 23.125rem;
+  padding-top: 1.5625rem;
 
   & > img {
     display: block;
@@ -38,8 +38,14 @@ body {
   }
 }
 
+.container {
+  width: 100%;
+  max-width: 39.1875rem;
+  margin-inline: auto;
+}
+
 input {
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
   font: var(--input);
   border: 2px solid var(--border-primary);
   border-radius: 0.75rem;
@@ -78,7 +84,7 @@ button {
 main {
   margin-block: 3.875rem 2.25rem;
 
-  header {
+  & header {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -100,10 +106,85 @@ main {
     }
   }
 
-  form {
+  & form {
     width: 100%;
     margin-block: 2.75rem 2.5rem;
     display: flex;
     gap: 1rem;
+  }
+
+  & section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .item-container {
+      background-color: var(--background-secondary);
+      padding: 0.6875rem 0.75rem;
+      display: flex;
+      gap: 0.53125rem;
+      align-items: center;
+      border-radius: 0.75rem;
+      position: relative;
+
+      & .item-checkbox {
+        background-color: var(--background-secondary);
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid var(--border-primary);
+        border-radius: 0.375rem;
+        pointer-events: none;
+      }
+
+      & input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &:hover + .item-checkbox {
+          border: 1px solid var(--border-hover);
+        }
+
+        &:checked + .item-checkbox {
+          background-color: var(--color-brand);
+          background-image: url("assets/icons/check.svg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          border: 1px solid var(--color-brand);
+        }
+      }
+
+      & label {
+        flex: 1;
+        font: var(--paragraph);
+        color: var(--content-secondary);
+      }
+
+      .trash {
+        cursor: pointer;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+#modal {
+  background-color: var(--color-danger);
+  color: var(--always-white);
+  display: flex;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  gap: 0.5rem;
+
+  & p {
+    flex: 1;
+  }
+
+  & #close {
+    cursor: pointer;
   }
 }

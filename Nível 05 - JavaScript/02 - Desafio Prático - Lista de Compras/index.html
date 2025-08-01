@@ -17,7 +17,7 @@
   <body>
     <img src="assets/logo.svg" alt="Logo da Quicklist" />
 
-    <main>
+    <main class="container">
       <header>
         <a
           ><img
@@ -42,45 +42,55 @@
 
       <section>
         <div class="item-container">
-          <div class="item-checkbox">
-            <input type="checkbox" name="item" id="item" />
-            <label for="item">Pão de forma</label>
-          </div>
-          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+          <input type="checkbox" />
+          <div class="item-checkbox"></div>
+          <label>Pão de forma</label>
+          <img
+            class="trash"
+            src="assets/icons/trash.svg"
+            alt="Ícone de lixeira"
+          />
         </div>
 
         <div class="item-container">
-          <div class="item-checkbox">
-            <input type="checkbox" name="item" id="item" />
-            <label for="item">Café preto</label>
-          </div>
-          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+          <input type="checkbox" />
+          <div class="item-checkbox"></div>
+          <label>Café preto</label>
+          <img
+            class="trash"
+            src="assets/icons/trash.svg"
+            alt="Ícone de lixeira"
+          />
         </div>
 
         <div class="item-container">
-          <div class="item-checkbox">
-            <input type="checkbox" name="item" id="item" />
-            <label for="item">Suco de laranja</label>
-          </div>
-          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+          <input type="checkbox" />
+          <div class="item-checkbox"></div>
+          <label>Suco de laranja</label>
+          <img
+            class="trash"
+            src="assets/icons/trash.svg"
+            alt="Ícone de lixeira"
+          />
         </div>
 
         <div class="item-container">
-          <div class="item-checkbox">
-            <input type="checkbox" name="item" id="item" />
-            <label for="item">Bolacha</label>
-          </div>
-          <img src="assets/icons/trash.svg" alt="Ícone de lixeira" />
+          <input type="checkbox" />
+          <div class="item-checkbox"></div>
+          <label>Bolacha</label>
+          <img
+            class="trash"
+            src="assets/icons/trash.svg"
+            alt="Ícone de lixeira"
+          />
         </div>
       </section>
     </main>
 
-    <div id="modal">
-      <div id="modal-message">
-        <img src="assets/icons/warning.svg" alt="Ícone de aviso" />
-        <p>O item foi removido da lista</p>
-      </div>
-      <img src="assets/icons/close.svg" alt="Ícone de fechar" />
+    <div id="modal" class="container">
+      <img src="assets/icons/warning.svg" alt="Ícone de aviso" />
+      <p>O item foi removido da lista</p>
+      <img id="close" src="assets/icons/close.svg" alt="Ícone de fechar" />
     </div>
 
     <script src="script.js"></script>

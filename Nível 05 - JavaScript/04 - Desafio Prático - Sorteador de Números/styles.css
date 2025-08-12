@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --content-primary: #ffffff;
+  --content-secondary: #c7c9cc;
+  --content-tertiary: #d9d9d9;
+  --content-brand: #c58de7;
+  --color-inverse: #030203;
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222e;
+  --background-brand: #c58de7;
+  --background-gray: #3d3d3d;
+  --accent-pink: #d586e0;
+  --accent-blue: #91a1fa;
+  --accent-green: #77c0af;
+  --accent-lime: #d1dc97;
+  --accent-red: #e9a9b3;
+  --gradient-border: linear-gradient(
+    to right,
+    #77c0af 0%,
+    #d1dc97 14.84%,
+    #e9a9b3 32.15%,
+    #d586e0 65.79%,
+    #91a1fa 84.58%
+  );
+  --gradient-background: linear-gradient(to right, #d586e0 0%, #91a1fa 98.93%);
+  --gradient-content: linear-gradient(to right, #c7c9cc 0%, #3d3d3d 100%);
+
+  --font-family-sora: "Sora", sans-serif;
+  --font-family-roboto-mono: "Roboto Mono", sans-serif;
+  --font-family-roboto-flex: "Roboto Flex", sans-serif; 
+  --display-large: 800 72px/130% var(--font-family-sora);
+  --display-medium: 800 40px/130% var(--font-family-sora);
+  --display-small: 700 32px/130% var(--font-family-sora);
+  --overline: 700 16px/150% var(--font-family-roboto-mono);
+  --paragraph-large: 500 16px/150% var(--font-family-roboto-flex);
+  --paragraph-medium: 500 14px/150% var(--font-family-roboto-flex);
+  --paragraph-small: 500 12px/150% var(--font-family-roboto-flex);
+  --label-medium: 700 20px/150% var(--font-family-roboto-flex);
+  --label-small: 700 16px/150% var(--font-family-roboto-flex);
+}
+
+body {
+  background-color: var(--background-primary);
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  font: var(--paragraph-small);
+  color: var(--content-secondary);
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  max-width: 68.625rem;
+  margin-inline: auto;
+}

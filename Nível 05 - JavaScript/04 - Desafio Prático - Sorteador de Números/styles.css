@@ -29,11 +29,11 @@
     #91a1fa 84.58%
   );
   --gradient-background: linear-gradient(to right, #d586e0 0%, #91a1fa 98.93%);
-  --gradient-content: linear-gradient(to right, #c7c9cc 0%, #3d3d3d 100%);
+  --gradient-content: linear-gradient(to right, #c7c9cc 0%, #9b9c9e 100%);
 
   --font-family-sora: "Sora", sans-serif;
   --font-family-roboto-mono: "Roboto Mono", sans-serif;
-  --font-family-roboto-flex: "Roboto Flex", sans-serif; 
+  --font-family-roboto-flex: "Roboto Flex", sans-serif;
   --display-large: 800 72px/130% var(--font-family-sora);
   --display-medium: 800 40px/130% var(--font-family-sora);
   --display-small: 700 32px/130% var(--font-family-sora);
@@ -58,8 +58,87 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  color: var(--content-primary);
+  font: var(--display-large);
+  margin-block: 0.75rem 2.375rem;
+}
+
+h2 {
+  color: var(--content-primary);
+  font: var(--label-medium);
+}
+
+h3 {
+  color: var(--content-brand);
+  font: var(--paragraph-medium);
+}
+
+#logo {
+  width: 100%;
+  height: 2.4rem;
+  max-width: 68.625rem;
+  margin: 4.75rem auto 5.5625rem;
+  transform: translateX(-0.875rem);
+}
+
 main {
   width: 100%;
   max-width: 68.625rem;
   margin-inline: auto;
+  display: flex;
+}
+
+section {
+  min-width: 35.75rem;
+
+  & span {
+    color: var(--content-brand);
+    font: var(--overline);
+    background: var(--gradient-content);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  & #topics {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+
+    & .topic {
+      display: flex;
+      align-items: start;
+      gap: 0.5rem;
+
+      & p {
+        font: var(--paragraph-small);
+        color: var(--content-secondary);
+      }
+    }
+  }
+}
+
+form {
+  & p {
+    color: var(--content-secondary);
+    font: var(--paragraph-large);
+  }
+
+  & fieldset {
+    border: none;
+    display: flex;
+
+    & input {
+      width: 5.375rem;
+      background-color: var(--background-secondary);
+      color: var(--content-primary);
+      outline: none;
+      border: none;
+      border-radius: 0.5rem;
+      font: var(--display-small);
+      padding: 0.25rem 0.5rem;
+      text-align: center;
+    }
+  }
 }

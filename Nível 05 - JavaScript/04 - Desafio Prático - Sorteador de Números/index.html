@@ -13,21 +13,27 @@
     />
   </head>
   <body>
-    <img src="assets/logo.svg" alt="Logo da Numbers" />
+    <div id="logo">
+      <img src="assets/logo.svg" alt="Logo da Numbers" />
+    </div>
 
     <main>
       <section>
         <span>ONLINE - GRATUITO</span>
 
-        <h1>SORTEADOR DE NÚMEROS</h1>
+        <h1>
+          SORTEADOR <br />
+          DE NÚMEROS
+        </h1>
 
-        <div class="topics">
+        <div id="topics">
           <div class="topic">
             <img src="assets/icons/doubt.svg" alt="Ícone de Dúvida" />
             <div class="question">
               <h3>Como funciona o sorteador de números?</h3>
               <p>
                 O sorteador utiliza um algoritmo de geração aleatória para criar
+                <br />
                 números dentro do intervalo especificado pelo usuário.
               </p>
             </div>
@@ -38,7 +44,7 @@
             <div class="question">
               <h3>Posso escolher o intervalo dos números?</h3>
               <p>
-                Sim, você pode definir os valores mínimo e máximo para o
+                Sim, você pode definir os valores mínimo e máximo para o <br />
                 intervalo dos números sorteados.
               </p>
             </div>
@@ -55,15 +61,15 @@
         <fieldset>
           <div class="input-wrapper">
             <label for="numbers">NÚMEROS</label>
-            <input type="number" id="numbers" />
+            <input type="text" id="numbers" />
           </div>
           <div class="input-wrapper">
             <label for="from">DE</label>
-            <input type="number" id="from" />
+            <input type="text" id="from" />
           </div>
           <div class="input-wrapper">
             <label for="to">ATÉ</label>
-            <input type="number" id="to" />
+            <input type="text" id="to" />
           </div>
         </fieldset>
 
@@ -84,7 +90,7 @@
         </button>
       </form>
 
-      <aside>
+      <!-- <aside>
         <h2>RESULTADO DO SORTEIO</h2>
         <p>1º RESULTADO</p>
         <div class="results">
@@ -101,7 +107,7 @@
           SORTEAR NOVAMENTE
           <img src="assets/icons/repeat.svg" alt="Ícone de Repetição" />
         </button>
-      </aside>
+      </aside> -->
     </main>
 
     <script src="scripts.js"></script>

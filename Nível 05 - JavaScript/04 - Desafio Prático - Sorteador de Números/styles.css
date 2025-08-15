@@ -117,11 +117,7 @@ button {
 
 .container {
   margin-block: auto;
-  min-width: 30.125rem;
-}
-
-.none {
-  display: none;
+  width: 30.125rem;
 }
 
 #logo {
@@ -282,7 +278,7 @@ form {
 }
 
 aside {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 
@@ -296,6 +292,9 @@ aside {
     list-style: none;
     margin-block: 2.5rem;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 0.25rem;
     font: var(--paragraph-extra-large);
     color: var(--content-brand);
@@ -303,17 +302,26 @@ aside {
     & li {
       width: 5.25rem;
       height: 5.25rem;
-      border-radius: 1.75rem;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: transparent;
-      color: transparent;
-      animation: li-rotate 2s ease forwards;
 
+      & .background-result {
+        width: 5.25rem;
+        height: 5.25rem;
+        inset: 0;
+        position: absolute;
+        z-index: -1;
+        border-radius: 1.75rem;
+        background-color: var(--content-brand);
+        transform: scale(0) rotate(0deg);
+        animation: li-grow-rotate 2.5s ease forwards;
+      }
+      
       & span {
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        color: var(--content-brand);
+        animation: span-show 2.5s .6s ease backwards;
       }
     }
   }
@@ -377,28 +385,34 @@ aside {
   }
 }
 
-@keyframes li-rotate {
+@keyframes li-grow-rotate {
   0% {
-    background-color: red;
-    transform: rotateY(0deg);
-    color: transparent;
-  }
-  
-  50% {
-    background-color: red;
-    transform: rotateY(180deg);
-    color: transparent;
+    transform: scale(0) rotate(0deg);
+    background-color: var(--content-brand);
   }
 
-  51% {
-    background-color: red;
-    transform: rotateY(180deg);
-    color: var(--content-brand); /* Número aparece */
+  40% {
+    transform: scale(1) rotate(0deg);
+    background-color: var(--content-brand);
   }
 
   100% {
+    transform: scale(1) rotate(180deg);
     background-color: transparent;
-    transform: rotateY(180deg);
+  }
+}
+
+@keyframes span-show {
+  0% {
+    opacity: 0;
+    color: var(--background-primary);
+  }
+  
+  60% {
+    opacity: 1;
+  }
+  
+  100% {
     color: var(--content-brand);
   }
 }

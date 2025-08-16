@@ -1,6 +1,16 @@
-# Depurando o Código
+# Depuração de Código
 
 ---
+
+## O Que É Depurar o Código
+
+![image.png](assets/aula07-1.png)
+
+![image.png](assets/aula07-2.png)
+
+![image.png](assets/aula07-3.png)
+
+## Depurando o Código
 
 ```js
 const input = document.querySelector("input");

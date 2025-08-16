@@ -4,21 +4,21 @@
 
 ## Aprendendo Sobre Repetições
 
-![image.png](assets/aula01-1.png)
+![image.png](assets/aula04-1.png)
 
-![image.png](assets/aula01-2.png)
+![image.png](assets/aula04-2.png)
 
-![image.png](assets/aula01-3.png)
+![image.png](assets/aula04-3.png)
 
-![image.png](assets/aula01-4.png)
+![image.png](assets/aula04-4.png)
 
-![image.png](assets/aula01-5.png)
+![image.png](assets/aula04-5.png)
 
-![image.png](assets/aula01-6.png)
+![image.png](assets/aula04-6.png)
 
-![image.png](assets/aula01-7.png)
+![image.png](assets/aula04-7.png)
 
-![image.png](assets/aula01-8.png)
+![image.png](assets/aula04-8.png)
 
 ## Loop While
 

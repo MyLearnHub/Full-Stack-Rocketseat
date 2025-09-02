@@ -1,3 +1,19 @@
 {
-  "schedules": []
+  "schedules": [
+    {
+      "id": "1756822117714",
+      "name": "João da Silva",
+      "when": "2025-09-02T23:00:00.000Z"
+    },
+    {
+      "id": "1756827786469",
+      "name": "Paulo Alvares",
+      "when": "2025-09-03T15:00:00.000Z"
+    },
+    {
+      "id": 1756831776299,
+      "name": "Rodrigo Gonçalves",
+      "when": "2025-09-06T22:00:00.000Z"
+    }
+  ]
 }

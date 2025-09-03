@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundo Pet</title>
+
+    <link rel="stylesheet" href="src/styles/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <img src="src/assets/logo.svg" alt="Logo do Mundo Pet" />
+
+    <main>
+      <header>
+        <div class="title">
+          <h1>Sua agenda</h1>
+          <p>
+            Aqui você pode ver todos os clientes e serviços agendados para hoje.
+          </p>
+        </div>
+        <div class="input-wrapper">
+          <img
+            src="./src/assets/icons/calendar.svg"
+            alt="Ícone de Calendário"
+          />
+          <input type="date" id="date" required />
+          <img
+            src="./src/assets/icons/arrow-down.svg"
+            alt="Ícone de Seta para Baixo"
+          />
+        </div>
+      </header>
+
+      <section>
+        <div class="schedule">
+          <div class="head">
+            <div class="period">
+              <img src="" alt="" />
+              <strong>Manhã</strong>
+            </div>
+            <span>09h-12h</span>
+          </div>
+          <ul>
+            <li>
+              <strong>09:00</strong>
+              <p>Thor <span>/ Fernanda Costa</span></p>
+              <img
+                src="./src/assets/cancel.svg"
+                alt="Cancelar"
+                class="cancel-icon"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

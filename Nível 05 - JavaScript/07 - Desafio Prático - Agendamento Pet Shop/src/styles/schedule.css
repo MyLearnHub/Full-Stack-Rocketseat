@@ -8,10 +8,9 @@ body > img {
 
 main {
   max-width: 44.4375rem;
-  margin-inline: auto;
+  margin: 3.875rem auto;
 
   & header {
-    margin-top: 3.875rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,15 +18,120 @@ main {
     & .title {
       display: flex;
       flex-direction: column;
+      gap: 0.25rem;
     }
 
     & .input-wrapper {
+      min-width: 10.75rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       border: 1px solid var(--border-primary);
       border-radius: 0.5rem;
       padding: 0.75rem;
+
+      & input {
+        position: relative;
+        display: flex;
+        flex: 1;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font: var(--label-large);
+        font-weight: 400;
+        color: var(--content-secondary);
+
+        &::-webkit-calendar-picker-indicator {
+          opacity: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          background: url(../assets/icons/arrow-down.svg) center/contain;
+          right: 0;
+          width: 1.25rem;
+          height: 1.25rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  & section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    & .schedule {
+      background-color: var(--background-tertiary);
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.625rem;
+
+      & .head {
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--background-logo);
+
+        & .period {
+          font: var(--label-large);
+          color: var(--content-primary);
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        & span {
+          font: var(--label-large);
+        }
+      }
+
+      & ul {
+        padding: 1.25rem;
+        font: var(--paragraph-small);
+
+        & li {
+          width: 100%;
+          padding: 1rem 0.75rem;
+          display: flex;
+          gap: 1rem;
+
+          p {
+            font: var(--label-small);
+            color: var(--content-primary);
+          }
+
+          span {
+            font: var(--paragraph-small);
+            color: var(--content-secondary);
+          }
+
+          & strong:nth-child(1) {
+            min-width: 2.8125rem;
+          }
+
+          & p:nth-child(2) {
+            min-width: 12.1875rem;
+          }
+
+          & span:nth-child(3) {
+            min-width: 13.71875rem;
+          }
+
+          & span:last-child {
+            cursor: pointer;
+          }
+        }
+
+        & li + li {
+          border-top: 1px solid var(--background-logo);
+        }
+      }
     }
   }
 }

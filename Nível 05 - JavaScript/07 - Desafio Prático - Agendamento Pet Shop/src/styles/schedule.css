@@ -4,6 +4,7 @@ body > img {
   border-radius: 0 0 0.75rem 0;
   position: absolute;
   inset: 0;
+  z-index: 2;
 }
 
 main {
@@ -19,43 +20,6 @@ main {
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-    }
-
-    & .input-wrapper {
-      min-width: 10.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid var(--border-primary);
-      border-radius: 0.5rem;
-      padding: 0.75rem;
-
-      & input {
-        position: relative;
-        display: flex;
-        flex: 1;
-        background-color: transparent;
-        outline: none;
-        border: none;
-        font: var(--label-large);
-        font-weight: 400;
-        color: var(--content-secondary);
-
-        &::-webkit-calendar-picker-indicator {
-          opacity: 0;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          background: url(../assets/icons/arrow-down.svg) center/contain;
-          right: 0;
-          width: 1.25rem;
-          height: 1.25rem;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
     }
   }
 
@@ -133,5 +97,11 @@ main {
         }
       }
     }
+  }
+
+  button {
+    position: fixed;
+    bottom: 2.0625rem;
+    right: 1.875rem;
   }
 }

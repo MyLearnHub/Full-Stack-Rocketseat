@@ -63,32 +63,32 @@ main {
           width: 100%;
           padding: 1rem 0.75rem;
           display: flex;
-          gap: 1rem;
 
-          p {
+          & .identification {
+            width: 17.75rem;
+            display: flex;
+            gap: 1rem;
+          }
+
+          & p {
             font: var(--label-small);
             color: var(--content-primary);
           }
 
-          span {
+          & span {
             font: var(--paragraph-small);
             color: var(--content-secondary);
           }
 
-          & strong:nth-child(1) {
-            min-width: 2.8125rem;
-          }
-
-          & p:nth-child(2) {
-            min-width: 12.1875rem;
-          }
-
-          & span:nth-child(3) {
-            min-width: 13.71875rem;
-          }
-
-          & span:last-child {
+          & span + span {
             cursor: pointer;
+            flex: 1;
+            text-align: end;
+
+            &:hover {
+              text-decoration: underline;
+              color: var(--content-primary);
+            }
           }
         }
 
@@ -99,9 +99,54 @@ main {
     }
   }
 
-  button {
+  & footer {
+    width: 100%;
+    background-color: transparent;
+    height: 5.25rem;
     position: fixed;
-    bottom: 2.0625rem;
-    right: 1.875rem;
+    bottom: 0;
+    left: 0;
+    display: flex;
+
+    & button {
+      margin: auto 1.875rem 2.0625rem auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    margin: 4.3125rem auto;
+
+    & header {
+      max-width: 21rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    & section {
+      margin-bottom: 8.75rem;
+
+      & li {
+        flex-direction: column;
+
+        & p:nth-child(2) {
+          margin-left: -0.25rem;
+        }
+
+        & span + span {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+    & footer {
+      background-color: var(--background-tertiary);
+
+      & button {
+        margin: auto;
+      }
+    }
   }
 }

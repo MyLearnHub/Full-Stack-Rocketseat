@@ -45,6 +45,7 @@ body {
   background-color: var(--background-body);
   font: var(--paragraph-medium);
   color: var(--content-secondary);
+  padding: 0 1.25rem;
 }
 
 h1 {
@@ -60,12 +61,15 @@ button {
   background-color: var(--content-brand);
   color: var(--button-text);
   border: none;
+  outline: none;
   border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
   font: var(--label-large);
   cursor: pointer;
-  
-  &:hover {
+
+  &:hover,
+  &:focus,
+  &:active {
     transition: 0.3s ease;
     background-color: var(--background-highlights);
   }
@@ -81,6 +85,15 @@ textarea {
   border: 1px solid var(--border-primary);
   font: var(--input);
   color: var(--content-primary);
+
+  &:hover {
+    border-color: var(--border-secondary);
+  }
+
+  &:active,
+  &:focus {
+    border-color: var(--border-brand);
+  }
 }
 
 textarea {

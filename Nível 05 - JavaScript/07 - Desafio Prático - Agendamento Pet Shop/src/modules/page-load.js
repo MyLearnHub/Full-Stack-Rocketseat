@@ -1,5 +1,6 @@
-// Importa a biblioteca day.js
 import dayjs from "dayjs";
+
+import { schedulesDay } from "./schedules/load.js";
 
 // Seleciona o input de data.
 const inputDate = document.querySelector("#date");
@@ -9,3 +10,7 @@ const actualDate = dayjs(new Date()).format("YYYY-MM-DD");
 
 // Define a data atual no input.
 inputDate.value = actualDate;
+
+document.addEventListener("DOMContentLoaded", () => {
+  schedulesDay();
+});

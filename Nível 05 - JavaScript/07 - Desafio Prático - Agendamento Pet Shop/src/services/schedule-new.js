@@ -1,6 +1,6 @@
 import { apiConfig } from "./api-config";
 
-export async function scheduleNew({ id, name, pet, phone, description, date, hour }) {
+export async function scheduleNew({ id, name, pet, phone, description, when }) {
   try {
     // Faz a requisição para enviar os dados do agendamento.
     await fetch(`${apiConfig.baseUrl}/schedules`, {
@@ -14,8 +14,7 @@ export async function scheduleNew({ id, name, pet, phone, description, date, hou
         pet,
         phone,
         description,
-        date,
-        hour,
+        when
       }),
     });
 

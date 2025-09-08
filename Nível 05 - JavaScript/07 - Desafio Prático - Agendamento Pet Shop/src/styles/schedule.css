@@ -82,7 +82,7 @@ main {
 
           & span + span {
             cursor: pointer;
-            flex: 1;
+            margin-left: auto;
             text-align: end;
 
             &:hover {

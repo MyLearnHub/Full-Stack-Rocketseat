@@ -49,10 +49,6 @@ form {
 }
 
 @media (max-width: 768px) {
-  body {
-    overflow-y: hidden;
-  }
-
   .modal-overlay {
     overflow-y: scroll;
 

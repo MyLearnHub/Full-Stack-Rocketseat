@@ -80,7 +80,7 @@ main {
             color: var(--content-secondary);
           }
 
-          & span + span {
+          & .cancel-button {
             cursor: pointer;
             margin-left: auto;
             text-align: end;

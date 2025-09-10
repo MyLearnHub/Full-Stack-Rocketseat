@@ -41,6 +41,7 @@ export function schedulesShow({ dailySchedules }) {
       identification.classList.add("identification");
       description.textContent = schedule.description;
       cancel.textContent = "Remover agendamento";
+      cancel.classList.add("cancel-button");
 
       // Adiciona o tempo, nome e ícone no item.
       item.append(identification, description, cancel);

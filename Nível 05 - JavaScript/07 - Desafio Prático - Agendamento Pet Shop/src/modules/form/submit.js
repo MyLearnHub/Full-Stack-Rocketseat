@@ -19,9 +19,8 @@ const hour = dayjs(new Date()).format("HH:mm");
 selectedDate.value = date;
 selectedHour.value = hour;
 
-// Define a data e a hora mínima no formulário.
+// Define a data mínima no formulário.
 selectedDate.min = date;
-selectedHour.min = hour;
 
 form.onsubmit = async (event) => {
   event.preventDefault();

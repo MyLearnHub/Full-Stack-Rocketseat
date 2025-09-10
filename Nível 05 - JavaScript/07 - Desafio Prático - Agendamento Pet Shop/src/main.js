@@ -11,5 +11,7 @@ import "./styles/schedule.css";
 // JS
 import "./modules/form/load.js";
 import "./modules/form/submit.js";
+import "./modules/schedules/cancel.js";
+import "./modules/date-change.js";
 
 import "./modules/page-load.js";

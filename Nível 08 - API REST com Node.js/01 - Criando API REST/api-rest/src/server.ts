@@ -1,26 +1,26 @@
-import express from "express";
-import { myMiddleware } from "./middlewares/my-middleware.js";
+import express, { Request, Response, NextFunction } from "express";
+
+import { routes } from "./routes";
+
+import { AppError } from "./utils/app-error";
 
 const PORT = 3333;
 
 const app = express();
 app.use(express.json());
 
-// Middleware global (aplica para todas as rotas abaixo.)
-// app.use(myMiddleware);
+app.use(routes);
 
-app.get("/products", (request, response) => {
-  const { page, limit } = request.query;
+/**
+ * 400 (Bad Request): Erro do cliente.
+ * 500 (Internal Server Error): Erro interno do servidor.
+ */
+app.use((error: any, request: Request, response: Response, _: NextFunction) => {
+  if (error instanceof AppError) {
+    return response.status(error.statusCode).json({ message: error.message });
+  }
 
-  response.send(`Page: ${page}, Limit: ${limit}`);
+  response.status(500).json({ message: error.message });
 });
-
-// Middleware local em uma rota especifica.
-app.post("/products", myMiddleware, (request, response) => {
-  const { name, price } = request.body;
-
-  // response.send(`Produto ${name} custa $${price}`);
-  response.status(201).json({ name, price });
-})
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

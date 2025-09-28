@@ -52,18 +52,109 @@ SELECT * FROM products WHERE (price > 45 AND price < 1000) AND (category = 'audi
 
 ## Between
 
+```sql
+-- SELECT * FROM products WHERE price >= 600 AND price <= 1200
+
+SELECT * FROM products WHERE price BETWEEN 600 AND 1200
+```
+
 ## IN
+
+```sql
+-- Seleciona multiplos valores númericos.
+SELECT * FROM products WHERE price IN (800, 550, 1200)
+
+-- Seleciona multiplos valores do tipo texto.
+SELECT * FROM products WHERE category IN ('image', 'audio')
+```
 
 ## Order By
 
+```sql
+-- ASC (ascendente/crescente)
+SELECT * FROM products ORDER BY price
+SELECT * FROM products ORDER BY price ASC
+  
+-- DESC (descendente/decrescente)
+SELECT * FROM products ORDER BY price DESC
+
+-- WHERE + ORDER BY
+SELECT * FROM products WHERE category = 'audio' ORDER BY price DESC
+
+-- ORDER BY com texto
+SELECT * FROM products ORDER BY name
+```
+
 ## LIMIT
+
+```sql
+SELECT * FROM products ORDER BY price DESC LIMIT 3
+```
 
 ## Count
 
+```sql
+SELECT * FROM products
+
+SELECT COUNT(*) FROM products
+  
+SELECT COUNT(name) FROM products
+  
+SELECT COUNT(price) FROM products
+  
+SELECT COUNT(*) FROM products WHERE price >= 600
+```
+
 ## Sum
+
+```sql
+SELECT * FROM products
+
+SELECT SUM(price) FROM products
+  
+SELECT SUM(price) FROM products WHERE category = 'audio'
+  
+SELECT SUM(name) FROM products
+```
 
 ## Avg
 
+```sql
+SELECT * FROM products
+
+SELECT AVG(price) FROM products
+  
+SELECT AVG(price) FROM products WHERE category = 'audio'
+  
+-- average
+```
+
 ## Aliases
 
+```sql
+SELECT COUNT(*) AS 'TOTAL' FROM products
+  
+SELECT COUNT(*) AS TOTAL FROM products
+
+-- O AS é opcional.
+SELECT COUNT(*) TOTAL FROM products
+
+-- Nome composto
+SELECT COUNT(*) AS 'TOTAL DE PRODUTOS' FROM products
+
+SELECT COUNT(*) AS [TOTAL DE PRODUTOS] FROM products
+
+SELECT id AS code, name, price FROM products
+```
+
 ## Group By
+
+```sql
+SELECT * FROM products
+
+SELECT category, COUNT(*) AS total
+FROM products
+WHERE price > 600
+GROUP BY category
+ORDER BY total DESC
+```

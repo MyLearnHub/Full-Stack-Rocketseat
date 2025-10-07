@@ -2,7 +2,7 @@ import http from "node:http"
 
 const server = http.createServer(async (request, response) => {
   if (request.method === "GET" && request.url === "/") {
-    return response.end("Hello Docker!")
+    return response.end("Hello World!")
   }
 
   return response.writeHead(404).end("Not found!")

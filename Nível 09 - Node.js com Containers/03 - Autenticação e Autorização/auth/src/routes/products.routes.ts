@@ -1,11 +1,23 @@
-import { Router } from "express"
-import { ProductsController } from "@/controllers/products-controller"
-import { ensureAuthenticated } from "@/middlewares/ensureAuthenticated"
+import { Router } from "express";
+import { ProductsController } from "@/controllers/products-controller";
 
-const productsRoutes = Router()
-const productsController = new ProductsController()
+import { ensureAuthenticated } from "@/middlewares/ensureAuthenticated";
+import { verifyUserAuthorization } from "@/middlewares/verifyUserAuthorization";
 
-productsRoutes.get("/", productsController.index)
-productsRoutes.post("/", ensureAuthenticated, productsController.create)
+const productsRoutes = Router();
+const productsController = new ProductsController();
 
-export { productsRoutes }
+// Aplicar autorização em todas as rotas a seguir.
+// productsRoutes.use(verifyUserAuthorization(["sale", "admin"]));
+
+productsRoutes.get("/", productsController.index);
+
+// Autorização em uma rota especifica
+productsRoutes.post(
+  "/",
+  ensureAuthenticated,
+  verifyUserAuthorization(["sale", "admin"]),
+  productsController.create
+);
+
+export { productsRoutes };

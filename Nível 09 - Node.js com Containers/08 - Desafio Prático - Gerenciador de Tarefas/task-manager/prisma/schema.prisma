@@ -77,8 +77,8 @@ model Task {
   status TaskStatus @default(pending)
   priority Priority @default(low)
   
-  assignedTo String @map("assigned_to")
-  user User @relation(fields: [assignedTo], references: [id])
+  assignedTo String? @map("assigned_to")
+  user User? @relation(fields: [assignedTo], references: [id])
 
   teamId String @map("team_id")
   team Team @relation(fields: [teamId], references: [id])

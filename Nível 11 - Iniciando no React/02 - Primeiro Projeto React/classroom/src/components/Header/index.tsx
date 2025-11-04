@@ -16,7 +16,7 @@ export function Header({ current, max, onRestart }: Props) {
 
       <header>
         <span>
-          <strong>{current}</strong> de {max} de 10 tentativas
+          <strong>{current}</strong> de {max} tentativas
         </span>
 
         <button type="button" onClick={onRestart}>

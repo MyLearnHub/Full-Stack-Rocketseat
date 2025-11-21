@@ -6,14 +6,13 @@ type Props = React.ComponentProps<"button"> & {
 
 const variants = {
   button: {
-    primary: "bg-gray-300 text-gray-50 hover:bg-blue-600",
-    secondary: "bg-gray-100 hover:bg-blue-600",
+    primary: "bg-gray-300 text-gray-50 hover:bg-gray-500",
+    secondary: "bg-gray-100 hover:bg-gray-400 hover:text-gray-500",
   },
 };
 
 export function Button({
   children,
-  className,
   type = "button",
   variant = "primary",
   ...rest
@@ -24,7 +23,6 @@ export function Button({
       className={classMerge([
         "w-full text-sm p-2.5 rounded-[5px] cursor-pointer transition ease-linear font-bold",
         variants.button[variant],
-        className,
       ])}
       {...rest}
     >

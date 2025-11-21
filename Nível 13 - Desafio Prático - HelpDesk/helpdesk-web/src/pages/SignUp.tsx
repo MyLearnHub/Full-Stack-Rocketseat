@@ -1,20 +1,26 @@
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 
-export function SignIn() {
+export function SignUp() {
   return (
     <div className="w-full mx-auto sm:w-[400px]">
       <form className="border border-gray-100 p-7 rounded-[10px] w-full">
         <div>
           <h1 className="mb-0.5 text-gray-300 text-xl font-bold">
-            Acesse o portal
+            Crie sua conta
           </h1>
           <p className="text-gray-200 text-xs">
-            Entre usando seu e-mail e senha cadastrados
+            Informe seu nome, e-mail e senha
           </p>
         </div>
 
         <div className="my-10 flex flex-col gap-4">
+          <Input
+            name="name"
+            required
+            legend="Nome"
+            placeholder="Digite o nome completo"
+          />
           <Input
             name="email"
             required
@@ -31,20 +37,20 @@ export function SignIn() {
           />
         </div>
 
-        <Button type="submit">Entrar</Button>
+        <Button type="submit">Cadastrar</Button>
       </form>
 
       <div className="border border-gray-100 p-7 rounded-[10px] w-full mt-3">
         <div className="mb-6">
           <h2 className="mb-0.5 text-gray-300 text-md font-bold">
-            Ainda não tem uma conta?
+            Já tem uma conta?
           </h2>
-          <p className="text-gray-200 text-xs">Cadastre agora mesmo</p>
+          <p className="text-gray-200 text-xs">Entre agora mesmo</p>
         </div>
 
-        <a href="/signup">
+        <a href="/">
           <Button type="submit" variant="secondary">
-            Criar conta
+            Acessar conta
           </Button>
         </a>
       </div>

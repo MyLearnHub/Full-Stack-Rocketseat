@@ -11,7 +11,12 @@
   --color-gray-500: #151619;
 
   --color-blue-100: #5165e1;
-  --color-blue-200: #2E3DA3;
+  --color-blue-200: #2e3da3;
+  --color-blue-300: #355ec5;
+
+  --color-red-100: #cc3d6a;
+
+  --color-green-100: #508b26;
 
   --text-xxs: 0.625rem;
   --text-md: 1rem;

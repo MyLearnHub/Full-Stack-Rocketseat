@@ -48,7 +48,9 @@ export function TicketLine({ t, isLast }: { t: Ticket; isLast: boolean }) {
       </TableData>
 
       <TableData>
-        <Button variant="secondary" icon={pencil}></Button>
+        <a href="/ticket/1">
+          <Button variant="secondary" icon={pencil}></Button>
+        </a>
       </TableData>
     </tr>
   );

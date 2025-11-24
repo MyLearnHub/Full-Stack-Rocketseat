@@ -1,5 +1,6 @@
 import { TableHead } from "../components/TableHead";
 import { TicketLine } from "../components/TicketLine";
+import { Title } from "../components/Title";
 
 export type Ticket = {
   date: string;
@@ -80,7 +81,7 @@ const tickets: Ticket[] = [
 export function ManagerTickets() {
   return (
     <div className="w-full">
-      <h1 className="text-2xl font-bold text-blue-200 mb-6">Chamados</h1>
+      <Title>Chamados</Title>
 
       <div className="overflow-hidden rounded-[10px] border border-gray-100 text-sm">
         <table className="w-full text-left">

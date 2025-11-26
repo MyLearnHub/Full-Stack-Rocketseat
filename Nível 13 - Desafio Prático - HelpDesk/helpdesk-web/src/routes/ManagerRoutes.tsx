@@ -4,6 +4,7 @@ import { ManagerLayout } from "../components/ManagerLayout";
 import { ManagerTickets } from "../pages/ManagerTickets";
 import { NotFound } from "../pages/NotFound";
 import { TicketDetail } from "../pages/TicketDetail";
+import { ManagerEmployees } from "../pages/ManagerEmployees";
 
 export function ManagerRoutes() {
   return (
@@ -11,8 +12,8 @@ export function ManagerRoutes() {
       <Route path="/" element={<ManagerLayout />}>
         <Route index element={<ManagerTickets />} />
         <Route path="/ticket/:id" element={<TicketDetail />} />
-        <Route path="employees" element={<h1>Técnicos</h1>} />
-        <Route path="customers" element={<h1>Clientes</h1>} />
+        <Route path="employees" element={<ManagerEmployees />} />
+        <Route path="customers" element={<h1>Clientes </h1>} />
         <Route path="services" element={<h1>Serviços</h1>} />
       </Route>
 

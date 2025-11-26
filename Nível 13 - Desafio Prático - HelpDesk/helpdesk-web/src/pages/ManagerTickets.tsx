@@ -99,10 +99,10 @@ export function ManagerTickets() {
           </thead>
 
           <tbody className="text-gray-300">
-            {tickets.map((t, index) => {
+            {tickets.map((ticket, index) => {
               const isLast = index === tickets.length - 1;
 
-              return <TicketLine key={t.id} t={t} isLast={isLast} />;
+              return <TicketLine key={ticket.id} ticket={ticket} isLast={isLast} />;
             })}
           </tbody>
         </table>

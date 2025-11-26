@@ -17,6 +17,7 @@ export function Button({
   type = "button",
   variant = "primary",
   icon,
+  className,
   ...rest
 }: Props) {
   return (
@@ -25,7 +26,8 @@ export function Button({
       className={classMerge([
         "w-full text-sm rounded-[5px] cursor-pointer transition ease-linear font-bold",
         variants.button[variant],
-        icon ? "flex items-center justify-center p-[7px] w-max" : "p-2.5",
+        icon ? "flex items-center justify-center p-[7px] w-max gap-2" : "p-2.5",
+        className,
       ])}
       {...rest}
     >

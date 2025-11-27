@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  employee
+  manager
+  customer
+}
+
+enum TicketStatus {
+  Aberto
+  Em_atendimento
+  Encerrado
+}
+
+model User {
+  id                String   @id @default(uuid())
+  name              String
+  email             String   @unique
+  password          String
+  role              UserRole
+  isActive          Boolean  @default(true) @map("is_active")
+  profileImageUrl   String?  @map("profile_image_url")
+  availabilityHours String[] @default(["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00", "17:00"]) @map("availability_hours")
+  temporaryPassword Boolean  @default(false) @map("temporary_password")
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+
+  // Relações
+  customerTickets Ticket[] @relation("CustomerTickets")
+  employeeTickets Ticket[] @relation("EmployeeTickets")
+
+  addedTicketServices TicketService[] @relation("AddedByUser")
+
+  @@map("users")
+}
+
+model Service {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  price       Decimal?  @db.Decimal(10, 2)
+  isActive    Boolean   @default(true) @map("is_active")
+  deletedAt   DateTime? @map("deleted_at")
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+
+  ticketServices TicketService[]
+
+  @@map("services")
+}
+
+model Ticket {
+  id          String @id @default(uuid())
+  title       String
+  description String
+
+  customer   User   @relation("CustomerTickets", fields: [customerId], references: [id], onDelete: Cascade)
+  customerId String
+
+  employee   User?   @relation("EmployeeTickets", fields: [employeeId], references: [id])
+  employeeId String?
+
+  status TicketStatus @default(Aberto)
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+
+  ticketServices TicketService[]
+
+  @@map("tickets")
+}
+
+model TicketService {
+  id String @id @default(uuid())
+
+  ticket   Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  ticketId String
+
+  service   Service @relation(fields: [serviceId], references: [id])
+  serviceId String
+  price     Decimal @db.Decimal(10, 2)
+
+  addedBy   User?   @relation("AddedByUser", fields: [addedById], references: [id])
+  addedById String?
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+
+  @@index([ticketId])
+  @@index([serviceId])
+  @@map("tickets_services")
+}

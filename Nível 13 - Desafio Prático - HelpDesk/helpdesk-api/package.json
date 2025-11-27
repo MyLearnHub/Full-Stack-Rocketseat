@@ -1,0 +1,21 @@
+{
+  "name": "helpdesk-api",
+  "version": "1.0.0",
+  "description": "API desenvolvida para o projeto Helpdesk Web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "author": "Paulo Alvares",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "prisma": "^5.19.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.1"
+  }
+}

@@ -81,7 +81,9 @@ const tickets: Ticket[] = [
 export function ManagerTickets() {
   return (
     <div className="w-full">
-      <Title>Chamados</Title>
+      <div className="mb-6">
+        <Title>Chamados</Title>
+      </div>
 
       <div className="overflow-hidden rounded-[10px] border border-gray-100 text-sm">
         <table className="w-full text-left">

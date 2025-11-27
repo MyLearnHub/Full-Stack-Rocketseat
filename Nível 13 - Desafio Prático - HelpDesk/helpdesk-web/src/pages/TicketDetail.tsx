@@ -10,7 +10,7 @@ export function TicketDetail() {
 
   return (
     <div className="mx-auto max-w-[800px] w-full">
-      <div className="w-full">
+      <div className="w-full mb-6">
         <div
           className="flex items-center gap-2 cursor-pointer p-0.5 mb-1"
           onClick={() => navigate(-1)}

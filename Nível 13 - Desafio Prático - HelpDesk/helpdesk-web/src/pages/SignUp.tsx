@@ -34,6 +34,7 @@ export function SignUp() {
             legend="Senha"
             type="password"
             placeholder="Digite sua senha"
+            alert="Mínimo de 6 dígitos"
           />
         </div>
 

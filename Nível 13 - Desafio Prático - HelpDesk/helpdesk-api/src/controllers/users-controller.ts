@@ -18,8 +18,8 @@ class UsersController {
         .string()
         .min(6, { message: "A senha deve ter pelo menos 6 digitos" }),
       role: z
-        .enum([UserRole.employee, UserRole.manager])
-        .default(UserRole.employee),
+        .enum([UserRole.employee, UserRole.manager, UserRole.customer])
+        .default(UserRole.customer),
     });
 
     const { name, email, password, role } = bodySchema.parse(request.body);

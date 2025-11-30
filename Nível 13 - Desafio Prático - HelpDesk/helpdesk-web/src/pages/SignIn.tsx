@@ -1,10 +1,53 @@
+import { useActionState } from "react";
+import { z, ZodError } from "zod";
+import { AxiosError } from "axios";
+
+import { api } from "../services/api";
+import { useAuth } from "../hooks/useAuth";
+
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 
+const signInSchema = z.object({
+  email: z.string().email({ message: "E-mail inválido" }),
+  password: z.string().trim().min(1, { message: "Informe a senha" }),
+});
+
 export function SignIn() {
+  const [state, formAction, isLoading] = useActionState(signIn, null);
+
+  const auth = useAuth();
+
+  async function signIn(prevState: any, formData: FormData) {
+    try {
+      const data = signInSchema.parse({
+        email: formData.get("email"),
+        password: formData.get("password"),
+      });
+
+      const response = await api.post("/sessions", data);
+      auth.save(response.data);
+    } catch (error) {
+      console.log(error);
+
+      if (error instanceof ZodError) {
+        return { message: error.issues[0].message };
+      }
+
+      if (error instanceof AxiosError) {
+        return { message: error.response?.data.message };
+      }
+
+      return { message: "Não foi possivel entrar!" };
+    }
+  }
+
   return (
     <div className="w-full mx-auto sm:w-[400px]">
-      <form className="border border-gray-100 p-7 rounded-[10px] w-full">
+      <form
+        action={formAction}
+        className="border border-gray-100 p-7 rounded-[10px] w-full"
+      >
         <div>
           <h1 className="mb-0.5 text-gray-300 text-xl font-bold">
             Acesse o portal
@@ -31,7 +74,9 @@ export function SignIn() {
           />
         </div>
 
-        <Button type="submit">Entrar</Button>
+        <Button type="submit" isLoading={isLoading}>
+          Entrar
+        </Button>
       </form>
 
       <div className="border border-gray-100 p-7 rounded-[10px] w-full mt-3">

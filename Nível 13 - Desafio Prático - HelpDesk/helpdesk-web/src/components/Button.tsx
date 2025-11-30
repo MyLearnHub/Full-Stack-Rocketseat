@@ -1,6 +1,7 @@
 import { classMerge } from "../utils/classMerge";
 
 type Props = React.ComponentProps<"button"> & {
+  isLoading?: boolean;
   variant?: "primary" | "secondary";
   icon?: string;
 };
@@ -14,6 +15,7 @@ const variants = {
 
 export function Button({
   children,
+  isLoading,
   type = "button",
   variant = "primary",
   icon,
@@ -27,6 +29,7 @@ export function Button({
         "w-full text-sm rounded-[5px] cursor-pointer transition ease-linear font-bold",
         variants.button[variant],
         icon ? "flex items-center justify-center p-[7px] w-max gap-2" : "p-2.5",
+        isLoading && "cursor-progress",
         className,
       ])}
       {...rest}

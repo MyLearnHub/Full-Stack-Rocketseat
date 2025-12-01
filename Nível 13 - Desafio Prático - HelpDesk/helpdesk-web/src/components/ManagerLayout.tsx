@@ -1,17 +1,29 @@
-import logoManager from "../assets/logo-manager.svg";
-import clipboard from "../assets/icons/clipboard.svg";
-import employee from "../assets/icons/employee.svg";
 import caseWork from "../assets/icons/case.svg";
 import wrench from "../assets/icons/wrench.svg";
 import avatar from "../assets/avatar-manager.svg";
+import employee from "../assets/icons/employee.svg";
+import logoManager from "../assets/logo-manager.svg";
+import clipboard from "../assets/icons/clipboard.svg";
+import menu from "../assets/icons/menu.svg";
 
-import { NavOption } from "./NavOption";
+import { useState } from "react";
 import { Outlet } from "react-router";
+import { NavOption } from "./NavOption";
 
 export function ManagerLayout() {
+  const [open, setOpen] = useState(false);
+
+  function toggleMenu() {
+    setOpen((prev) => !prev);
+  }
+
+  function closeMenu() {
+    setOpen(false);
+  }
+
   return (
-    <div className="w-screen h-screen flex pt-3 bg-gray-500">
-      <aside className="w-[200px] h-full flex flex-col justify-between">
+    <div className="w-screen h-screen overflow-x-hidden flex flex-col bg-gray-500 xl:flex-row xl:pt-3">
+      <aside className="w-[200px] h-full flex-col justify-between hidden xl:flex">
         <div>
           <img src={logoManager} alt="Logo HelpDesk" className="mx-5 my-6" />
 
@@ -46,7 +58,19 @@ export function ManagerLayout() {
         </div>
       </aside>
 
-      <main className="bg-gray-50 rounded-tl-3xl flex flex-1 px-12 pt-[52px] pb-12">
+      <header className="p-6 xl:hidden flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="p-2.5 rounded-[5px] bg-gray-300">
+            <img src={menu} alt="Ícone de menu" />
+          </div>
+
+          <img src={logoManager} alt="Logo HelpDesk" />
+        </div>
+
+        <img src={avatar} alt="Avatar Manager" className="w-10" />
+      </header>
+
+      <main className="bg-gray-50 rounded-t-3xl flex flex-1 px-6 pt-7 pb-6 xl:rounded-tl-3xl xl:rounded-tr-none xl:px-12 xl:pt-[52px] xl:pb-12">
         <Outlet />
       </main>
     </div>

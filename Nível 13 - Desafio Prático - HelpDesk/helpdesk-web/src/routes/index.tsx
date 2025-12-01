@@ -11,16 +11,18 @@ export function Routes() {
   const { session, isLoading } = useAuth();
 
   function Route() {
-    switch (session?.user.role) {
-      case "employee":
-        return <h1>Funcionário</h1>;
-      case "customer":
-        return <h1>Cliente</h1>;
-      case "manager":
-        return <ManagerRoutes />;
-      default:
-        return <AuthRoutes />;
-    }
+    // switch (session?.user.role) {
+    //   case "employee":
+    //     return <h1>Funcionário</h1>;
+    //   case "customer":
+    //     return <h1>Cliente</h1>;
+    //   case "manager":
+    //     return <ManagerRoutes />;
+    //   default:
+    //     return <AuthRoutes />;
+    // }
+
+    return <ManagerRoutes />;
   }
 
   if (isLoading) {

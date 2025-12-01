@@ -23,7 +23,7 @@ export function StatusBadge({ status }: { status: Ticket["status"] }) {
         }
         alt="Ícone de Status"
       />
-      <span>
+      <span className="hidden xl:flex">
         {status}
       </span>
     </div>

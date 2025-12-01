@@ -20,7 +20,7 @@ export function TicketLine({
       <TableData>
         <div className="text-xs">{ticket.date}</div>
       </TableData>
-      <TableData>
+      <TableData desktopOnly>
         <div className="font-semibold text-xs">{ticket.id}</div>
       </TableData>
 
@@ -29,9 +29,9 @@ export function TicketLine({
         <div className="text-xs">{ticket.service}</div>
       </TableData>
 
-      <TableData>{ticket.value}</TableData>
+      <TableData desktopOnly>{ticket.value}</TableData>
 
-      <TableData>
+      <TableData desktopOnly>
         <div className="flex items-center gap-2">
           <span className="h-5 w-5 rounded-full bg-blue-200 text-white flex items-center justify-center text-[8.75px]">
             {ticket.customerInitials}
@@ -40,7 +40,7 @@ export function TicketLine({
         </div>
       </TableData>
 
-      <TableData>
+      <TableData desktopOnly>
         <div className="flex items-center gap-2">
           <span className="h-5 w-5 rounded-full bg-blue-200 text-white flex items-center justify-center text-[8.75px]">
             {ticket.technicianInitials}

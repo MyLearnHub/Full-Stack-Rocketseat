@@ -5,6 +5,7 @@ import employee from "../assets/icons/employee.svg";
 import logoManager from "../assets/logo-manager.svg";
 import clipboard from "../assets/icons/clipboard.svg";
 import menu from "../assets/icons/menu.svg";
+import close from "../assets/icons/close.svg";
 
 import { useState } from "react";
 import { Outlet } from "react-router";
@@ -58,9 +59,12 @@ export function ManagerLayout() {
         </div>
       </aside>
 
-      <header className="p-6 xl:hidden flex items-center justify-between">
+      <header className="p-6 flex items-center justify-between xl:hidden">
         <div className="flex items-center gap-4">
-          <div className="p-2.5 rounded-[5px] bg-gray-300">
+          <div
+            className="p-2.5 rounded-[5px] bg-gray-300 cursor-pointer"
+            onClick={toggleMenu}
+          >
             <img src={menu} alt="Ícone de menu" />
           </div>
 
@@ -69,6 +73,34 @@ export function ManagerLayout() {
 
         <img src={avatar} alt="Avatar Manager" className="w-10" />
       </header>
+
+      <aside
+        className={`w-44 h-screen absolute bg-gray-500 xl:hidden ${
+          open ? "block" : "hidden"
+        }`}
+      >
+        <img
+          src={close}
+          alt="Ícone de fechar"
+          className="mx-5 my-6 w-7 cursor-pointer"
+          onClick={closeMenu}
+        />
+
+        <nav className="mx-4 my-5 flex flex-col gap-1">
+          <NavOption href="/" icon={clipboard}>
+            Chamados
+          </NavOption>
+          <NavOption href="/employees" icon={employee}>
+            Técnicos
+          </NavOption>
+          <NavOption href="/customers" icon={caseWork}>
+            Clientes
+          </NavOption>
+          <NavOption href="/services" icon={wrench}>
+            Serviços
+          </NavOption>
+        </nav>
+      </aside>
 
       <main className="bg-gray-50 rounded-t-3xl flex flex-1 px-6 pt-7 pb-6 xl:rounded-tl-3xl xl:rounded-tr-none xl:px-12 xl:pt-[52px] xl:pb-12">
         <Outlet />

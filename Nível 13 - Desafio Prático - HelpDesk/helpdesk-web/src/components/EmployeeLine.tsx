@@ -26,12 +26,25 @@ export function EmployeeLine({
         </div>
       </TableData>
 
-      <TableData>
+      <TableData desktopOnly>
         <p className="truncate">{employee.email}</p>
       </TableData>
 
       <TableData>
-        <div className="flex gap-1 flex-wrap">
+        <div className="flex gap-1 flex-wrap xl:hidden">
+          {employee.availability.length > 0 && (
+            <ScheduleBadge variant="inactive" hour={employee.availability[0]} />
+          )}
+
+          {employee.availability.length > 1 && (
+            <ScheduleBadge
+              variant="inactive"
+              hour={`+${employee.availability.length - 1}`}
+            />
+          )}
+        </div>
+
+        <div className="hidden xl:flex gap-1 flex-wrap">
           {employee.availability.length <= 5 &&
             employee.availability.map((hour) => (
               <ScheduleBadge variant="inactive" key={hour} hour={hour} />

@@ -63,10 +63,14 @@ const employees: Employee[] = [
 export function ManagerEmployees() {
   return (
     <div className="w-full">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-4 xl:mb-6">
         <Title>Técnicos</Title>
         <a href="/employees/new">
-          <Button icon={add} className="px-4 py-2.5 font-normal">
+          <Button
+            icon={add}
+            className="p-[11px] xl:px-4 xl:py-2.5 font-normal"
+            responsive
+          >
             Novo
           </Button>
         </a>
@@ -77,7 +81,9 @@ export function ManagerEmployees() {
           <thead className="text-gray-400 font-bold">
             <tr>
               <TableHead className="w-[30%]">Nome</TableHead>
-              <TableHead className="w-[30%]">E-mail</TableHead>
+              <TableHead className="w-[30%]" desktopOnly>
+                E-mail
+              </TableHead>
               <TableHead className="w-[30%]">Disponibilidade</TableHead>
               <TableHead className="w-[4.6%]"></TableHead>
             </tr>

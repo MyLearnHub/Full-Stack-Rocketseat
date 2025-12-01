@@ -4,6 +4,7 @@ type Props = React.ComponentProps<"button"> & {
   isLoading?: boolean;
   variant?: "primary" | "secondary";
   icon?: string;
+  responsive?: boolean;
 };
 
 const variants = {
@@ -19,6 +20,7 @@ export function Button({
   type = "button",
   variant = "primary",
   icon,
+  responsive,
   className,
   ...rest
 }: Props) {
@@ -35,7 +37,8 @@ export function Button({
       {...rest}
     >
       {icon && <img src={icon} alt="Ícone de botão" />}
-      {children}
+      {!responsive && children}
+      {responsive && <span className="hidden xl:inline">{children}</span>}
     </button>
   );
 }

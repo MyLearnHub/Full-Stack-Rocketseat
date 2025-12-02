@@ -10,7 +10,7 @@ export function TicketDetail() {
 
   return (
     <div className="mx-auto max-w-[800px] w-full">
-      <div className="w-full mb-6">
+      <div className="w-full mb-4 xl:mb-6">
         <div
           className="flex items-center gap-2 cursor-pointer p-0.5 mb-1"
           onClick={() => navigate(-1)}
@@ -22,8 +22,8 @@ export function TicketDetail() {
         <Title>Chamado detalhado</Title>
       </div>
 
-      <div className="w-full flex gap-6">
-        <div className="max-w-[480px] w-full p-6 border border-gray-100 rounded-[10px] flex gap-5 flex-col">
+      <div className="w-full flex gap-4 flex-col xl:flex-row xl:gap-6">
+        <div className="max-w-[480px] w-full p-5 border border-gray-100 rounded-[10px] flex gap-5 flex-col xl:p-6">
           <div className="w-full">
             <div className="flex items-center justify-between gap-0.5">
               <span className="text-xs font-bold text-gray-200">00004</span>
@@ -63,7 +63,7 @@ export function TicketDetail() {
           </div>
         </div>
 
-        <div className="max-w-[296px] w-full p-6 border border-gray-100 rounded-[10px] h-min">
+        <div className="w-full p-5 border border-gray-100 rounded-[10px] h-min xl:max-w-[296px] xl:p-6">
           <div className="flex flex-col gap-2 mb-8">
             <h3 className="text-xs font-bold text-gray-400">
               Técnico Responsável

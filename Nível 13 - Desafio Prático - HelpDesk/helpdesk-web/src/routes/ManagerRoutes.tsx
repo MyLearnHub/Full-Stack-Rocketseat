@@ -6,6 +6,7 @@ import { ManagerTickets } from "../pages/ManagerTickets";
 import { NewEmployee } from "../pages/NewEmployee";
 import { ManagerLayout } from "../components/ManagerLayout";
 import { ManagerEmployees } from "../pages/ManagerEmployees";
+import { EditEmployee } from "../pages/EditEmployee";
 
 export function ManagerRoutes() {
   return (
@@ -13,8 +14,9 @@ export function ManagerRoutes() {
       <Route path="/" element={<ManagerLayout />}>
         <Route index element={<ManagerTickets />} />
         <Route path="/ticket/:id" element={<TicketDetail />} />
-        <Route path="employees" element={<ManagerEmployees />} />
+        <Route path="/employees" element={<ManagerEmployees />} />
         <Route path="/employees/new" element={<NewEmployee />} />
+        <Route path="/employees/:id" element={<EditEmployee />} />
         <Route path="customers" element={<h1>Clientes </h1>} />
         <Route path="services" element={<h1>Serviços</h1>} />
       </Route>

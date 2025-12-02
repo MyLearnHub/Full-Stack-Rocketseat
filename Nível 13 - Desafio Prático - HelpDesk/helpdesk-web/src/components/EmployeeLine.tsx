@@ -67,7 +67,7 @@ export function EmployeeLine({
       </TableData>
 
       <TableData>
-        <a href={`/employee/${employee.id}`}>
+        <a href={`/employees/${employee.id}`}>
           <Button variant="secondary" icon={pencil} />
         </a>
       </TableData>

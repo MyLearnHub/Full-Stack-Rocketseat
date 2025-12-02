@@ -77,7 +77,7 @@ export function ManagerEmployees() {
       </div>
 
       <div className="overflow-hidden rounded-[10px] border border-gray-100 text-sm">
-        <table className="w-full table-fixed text-left">
+        <table className="w-full text-left">
           <thead className="text-gray-400 font-bold">
             <tr>
               <TableHead className="w-[30%]">Nome</TableHead>

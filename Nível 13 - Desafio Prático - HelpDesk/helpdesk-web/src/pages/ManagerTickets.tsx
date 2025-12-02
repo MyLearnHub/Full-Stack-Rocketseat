@@ -104,7 +104,9 @@ export function ManagerTickets() {
             {tickets.map((ticket, index) => {
               const isLast = index === tickets.length - 1;
 
-              return <TicketLine key={ticket.id} ticket={ticket} isLast={isLast} />;
+              return (
+                <TicketLine key={ticket.id} ticket={ticket} isLast={isLast} />
+              );
             })}
           </tbody>
         </table>

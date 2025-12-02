@@ -4,8 +4,9 @@ import { Title } from "../components/Title";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { ScheduleBadge } from "../components/ScheduleBadge";
+import avatar from "../assets/avatar/carlos-silva.svg";
 
-export function NewEmployee() {
+export function EditEmployee() {
   const navigate = useNavigate();
 
   return (
@@ -32,13 +33,15 @@ export function NewEmployee() {
       </div>
 
       <div className="flex flex-col gap-4 xl:gap-6 xl:flex-row">
-        <form className="border border-gray-100 w-full p-5 rounded-[10px] h-min xl:max-w-[296px] xl:p-6">
-          <div className="flex flex-col gap-1 mb-5 xl:mb-6">
+        <form className="border border-gray-100 w-full flex flex-col gap-5 p-5 rounded-[10px] h-min xl:max-w-[296px] xl:p-6 xl:gap-6">
+          <div className="flex flex-col gap-1">
             <h2 className="text-md font-bold text-gray-300">Dados pessoais</h2>
             <p className="text-xs text-gray-200">
               Defina as informações do perfil de técnico
             </p>
           </div>
+
+          <img src={avatar} alt="Avatar" className="w-12" />
 
           <div className="flex flex-col gap-4">
             <Input
@@ -46,21 +49,15 @@ export function NewEmployee() {
               required
               legend="Nome"
               placeholder="Nome completo"
-            />
+              value={"Carlos Silva"}
+              />
             <Input
               name="email"
               required
               legend="E-mail"
               type="email"
               placeholder="exemplo@mail.com"
-            />
-            <Input
-              name="password"
-              required
-              legend="Senha"
-              type="password"
-              placeholder="Defina a senha de acesso"
-              alert="Mínimo de 6 dígitos"
+              value={"carlos.silva@test.com"}
             />
           </div>
         </form>

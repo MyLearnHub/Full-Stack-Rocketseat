@@ -7,6 +7,7 @@ import { NewEmployee } from "../pages/NewEmployee";
 import { ManagerLayout } from "../components/ManagerLayout";
 import { ManagerEmployees } from "../pages/ManagerEmployees";
 import { EditEmployee } from "../pages/EditEmployee";
+import { ManagerCustomers } from "../pages/ManagerCustomers";
 
 export function ManagerRoutes() {
   return (
@@ -17,7 +18,7 @@ export function ManagerRoutes() {
         <Route path="/employees" element={<ManagerEmployees />} />
         <Route path="/employees/new" element={<NewEmployee />} />
         <Route path="/employees/:id" element={<EditEmployee />} />
-        <Route path="customers" element={<h1>Clientes </h1>} />
+        <Route path="/customers" element={<ManagerCustomers />} />
         <Route path="services" element={<h1>Serviços</h1>} />
       </Route>
 

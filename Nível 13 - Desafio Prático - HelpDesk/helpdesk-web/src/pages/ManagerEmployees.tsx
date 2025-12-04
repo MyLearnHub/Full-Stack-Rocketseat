@@ -4,14 +4,6 @@ import add from "../assets/icons/add.svg";
 import { EmployeeLine } from "../components/EmployeeLine";
 import { Title } from "../components/Title";
 
-export type Employee = {
-  id: string;
-  name: string;
-  email: string;
-  employeeInitials: string;
-  availability: string[];
-};
-
 const employees: Employee[] = [
   {
     id: "1",

@@ -3,13 +3,7 @@ import { TableHead } from "../components/TableHead";
 import { Title } from "../components/Title";
 import { CustomerLine } from "../components/CustomerLine";
 import { EditCustomerModal } from "../components/EditCustomerModal";
-
-export type Customer = {
-  id: string;
-  name: string;
-  email: string;
-  customerInitials: string;
-};
+import { DeleteCustomerModal } from "../components/DeleteCustomerModal";
 
 const customers: Customer[] = [
   {
@@ -45,18 +39,29 @@ const customers: Customer[] = [
 ];
 
 export function ManagerCustomers() {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isEditModalOpen, setEditModalOpen] = useState(false);
+  const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(
     null
   );
 
-  function openModal(customer: Customer) {
+  function openEditModal(customer: Customer) {
     setSelectedCustomer(customer);
-    setModalOpen(true);
+    setEditModalOpen(true);
   }
 
-  function closeModal() {
-    setModalOpen(false);
+  function closeEditModal() {
+    setEditModalOpen(false);
+    setSelectedCustomer(null);
+  }
+
+  function openDeleteModal(customer: Customer) {
+    setSelectedCustomer(customer);
+    setDeleteModalOpen(true);
+  }
+
+  function closeDeleteModal() {
+    setDeleteModalOpen(false);
     setSelectedCustomer(null);
   }
 
@@ -87,20 +92,30 @@ export function ManagerCustomers() {
                   key={customer.id}
                   customer={customer}
                   isLast={isLast}
-                  onEdit={() => openModal(customer)}
+                  onEdit={() => openEditModal(customer)}
+                  onDelete={() => openDeleteModal(customer)}
                 />
               );
             })}
           </tbody>
         </table>
-        
+
         {selectedCustomer && (
           <EditCustomerModal
             customer={selectedCustomer}
-            isOpen={isModalOpen}
-            onClose={closeModal}
+            isOpen={isEditModalOpen}
+            onClose={closeEditModal}
           />
         )}
+
+        {/* {selectedCustomer && ( */}
+          <DeleteCustomerModal
+            // customer={selectedCustomer}
+            customer={customers[0]}
+            isOpen={isDeleteModalOpen}
+            onClose={closeDeleteModal}
+          />
+        {/* )} */}
       </div>
     </div>
   );

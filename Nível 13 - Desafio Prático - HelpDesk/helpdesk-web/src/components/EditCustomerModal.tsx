@@ -1,6 +1,5 @@
 import close from "../assets/icons/close-black.svg";
 import avatar from "../assets/avatar/andre-costa.svg";
-import type { Customer } from "../pages/ManagerCustomers";
 import { Input } from "./Input";
 import { Button } from "./Button";
 

@@ -2,19 +2,6 @@ import { TableHead } from "../components/TableHead";
 import { TicketLine } from "../components/TicketLine";
 import { Title } from "../components/Title";
 
-export type Ticket = {
-  date: string;
-  id: string;
-  title: string;
-  service: string;
-  value: string;
-  customerName: string;
-  customerInitials: string;
-  technicianName: string;
-  technicianInitials: string;
-  status: "Aberto" | "Em atendimento" | "Encerrado";
-};
-
 const tickets: Ticket[] = [
   {
     date: "13/04/25 20:56",

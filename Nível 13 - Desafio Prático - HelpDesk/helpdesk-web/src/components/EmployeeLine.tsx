@@ -1,6 +1,5 @@
 import pencil from "../assets/icons/pencil.svg";
 
-import type { Employee } from "../pages/ManagerEmployees";
 import { Button } from "./Button";
 import { ScheduleBadge } from "./ScheduleBadge";
 import { TableData } from "./TableData";

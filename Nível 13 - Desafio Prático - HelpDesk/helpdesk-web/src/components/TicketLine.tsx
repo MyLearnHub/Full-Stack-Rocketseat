@@ -1,6 +1,5 @@
 import pencil from "../assets/icons/pencil.svg";
 
-import type { Ticket } from "../pages/ManagerTickets";
 import { Button } from "./Button";
 import { StatusBadge } from "./StatusBadge";
 import { TableData } from "./TableData";

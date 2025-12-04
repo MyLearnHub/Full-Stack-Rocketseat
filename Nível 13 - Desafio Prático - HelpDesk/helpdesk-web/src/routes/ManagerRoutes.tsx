@@ -8,6 +8,7 @@ import { ManagerLayout } from "../components/ManagerLayout";
 import { ManagerEmployees } from "../pages/ManagerEmployees";
 import { EditEmployee } from "../pages/EditEmployee";
 import { ManagerCustomers } from "../pages/ManagerCustomers";
+import { ManagerServices } from "../pages/ManagerServices";
 
 export function ManagerRoutes() {
   return (
@@ -19,7 +20,7 @@ export function ManagerRoutes() {
         <Route path="/employees/new" element={<NewEmployee />} />
         <Route path="/employees/:id" element={<EditEmployee />} />
         <Route path="/customers" element={<ManagerCustomers />} />
-        <Route path="services" element={<h1>Serviços</h1>} />
+        <Route path="/services" element={<ManagerServices />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

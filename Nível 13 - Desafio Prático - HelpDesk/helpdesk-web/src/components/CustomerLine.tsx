@@ -3,16 +3,17 @@ import trash from "../assets/icons/trash.svg";
 
 import { Button } from "./Button";
 import { TableData } from "./TableData";
-import type { Customer } from "../pages/ManagerCustomers";
 
 export function CustomerLine({
   customer,
   isLast,
   onEdit,
+  onDelete,
 }: {
   customer: Customer;
   isLast: boolean;
   onEdit: () => void;
+  onDelete: () => void;
 }) {
   return (
     <tr
@@ -33,7 +34,7 @@ export function CustomerLine({
       </TableData>
 
       <TableData className="flex gap-2">
-        <Button variant="secondary" icon={trash} />
+        <Button variant="secondary" icon={trash} onClick={onDelete} />
 
         <Button variant="secondary" icon={pencil} onClick={onEdit} />
       </TableData>

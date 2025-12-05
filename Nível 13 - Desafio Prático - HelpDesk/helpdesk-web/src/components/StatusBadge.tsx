@@ -10,9 +10,7 @@ export function StatusBadge({ status }: { status: Ticket["status"] }) {
   };
 
   return (
-    <div
-      className={`w-max p-1.5 rounded-full flex gap-1.5 text-xs font-bold ${styles[status]}`}
-    >
+    <div className={`w-max p-1.5 rounded-full flex gap-1.5 text-xs font-bold ${styles[status]}`}>
       <img
         src={
           status === "Aberto"
@@ -23,7 +21,9 @@ export function StatusBadge({ status }: { status: Ticket["status"] }) {
         }
         alt="Ícone de Status"
       />
-      <span className="hidden xl:flex">{status}</span>
+      <span className="hidden xl:flex">
+        {status}
+      </span>
     </div>
   );
 }

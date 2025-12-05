@@ -108,14 +108,13 @@ export function ManagerCustomers() {
           />
         )}
 
-        {/* {selectedCustomer && ( */}
+        {selectedCustomer && (
           <DeleteCustomerModal
-            // customer={selectedCustomer}
-            customer={customers[0]}
+            customer={selectedCustomer}
             isOpen={isDeleteModalOpen}
             onClose={closeDeleteModal}
           />
-        {/* )} */}
+       )}
       </div>
     </div>
   );

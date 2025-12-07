@@ -6,6 +6,7 @@ import { useAuth } from "../hooks/useAuth";
 
 import { AuthRoutes } from "./AuthRoutes";
 import { ManagerRoutes } from "./ManagerRoutes";
+import { CustomerRoutes } from "./CustomerRoutes";
 
 export function Routes() {
   const { session, isLoading } = useAuth();
@@ -15,14 +16,14 @@ export function Routes() {
     //   case "employee":
     //     return <h1>Funcionário</h1>;
     //   case "customer":
-    //     return <h1>Cliente</h1>;
+    //     return <CustomerRoutes />;
     //   case "manager":
     //     return <ManagerRoutes />;
     //   default:
     //     return <AuthRoutes />;
     // }
 
-    return <ManagerRoutes />;
+    return <CustomerRoutes />;
   }
 
   if (isLoading) {

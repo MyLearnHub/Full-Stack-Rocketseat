@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router";
 
 import { NotFound } from "../pages/NotFound";
-import { TicketDetail } from "../pages/TicketDetail";
+import { TicketDetails } from "../pages/TicketDetail";
 import { ManagerTickets } from "../pages/ManagerTickets";
 import { NewEmployee } from "../pages/NewEmployee";
 import { ManagerLayout } from "../components/ManagerLayout";
@@ -15,7 +15,7 @@ export function ManagerRoutes() {
     <Routes>
       <Route path="/" element={<ManagerLayout />}>
         <Route index element={<ManagerTickets />} />
-        <Route path="/ticket/:id" element={<TicketDetail />} />
+        <Route path="/tickets/:id" element={<TicketDetails />} />
         <Route path="/employees" element={<ManagerEmployees />} />
         <Route path="/employees/new" element={<NewEmployee />} />
         <Route path="/employees/:id" element={<EditEmployee />} />

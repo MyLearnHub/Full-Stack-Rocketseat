@@ -32,7 +32,7 @@ export function CustomerLayout() {
             <NavOption href="/" icon={clipboard}>
               Meus chamados
             </NavOption>
-            <NavOption href="/tickets" icon={add}>
+            <NavOption href="/new/tickets" icon={add}>
               Criar chamado
             </NavOption>
           </nav>
@@ -45,7 +45,9 @@ export function CustomerLayout() {
             <img src={avatar} alt="Avatar Customer" />
             <div className="flex flex-col">
               <span className="text-gray-50 text-sm">Usuário Cliente</span>
-              <span className="text-gray-400 text-xs">user.client@test.com</span>
+              <span className="text-gray-400 text-xs">
+                user.client@test.com
+              </span>
             </div>
           </div>
         </div>

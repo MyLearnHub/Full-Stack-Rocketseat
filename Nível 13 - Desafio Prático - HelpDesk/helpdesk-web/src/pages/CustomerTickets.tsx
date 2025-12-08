@@ -1,69 +1,7 @@
 import { Title } from "../components/Title";
 import { TableHead } from "../components/TableHead";
 import { TicketCustomerLine } from "../components/TicketCustomerLine";
-
-const tickets: Ticket[] = [
-  {
-    date: "13/04/25 20:56",
-    id: "00003",
-    title: "Rede lenta",
-    service: "Instalação de Rede",
-    value: "R$ 180,00",
-    customerName: "André Costa",
-    customerInitials: "AC",
-    technicianName: "Carlos Silva",
-    technicianInitials: "CS",
-    status: "Aberto",
-  },
-  {
-    date: "12/04/25 15:20",
-    id: "00004",
-    title: "Backup não está funcionando",
-    service: "Recuperação de Dados",
-    value: "R$ 200,00",
-    customerName: "André Costa",
-    customerInitials: "AC",
-    technicianName: "Carlos Silva",
-    technicianInitials: "CS",
-    status: "Aberto",
-  },
-  {
-    date: "12/04/25 09:01",
-    id: "00001",
-    title: "Computador não liga",
-    service: "Manutenção de Hardware",
-    value: "R$ 150,00",
-    customerName: "Aline Souza",
-    customerInitials: "AS",
-    technicianName: "Carlos Silva",
-    technicianInitials: "CS",
-    status: "Em atendimento",
-  },
-  {
-    date: "10/04/25 10:15",
-    id: "00002",
-    title: "Instalação de software de gestão",
-    service: "Suporte de Software",
-    value: "R$ 200,00",
-    customerName: "Julia Maria",
-    customerInitials: "JM",
-    technicianName: "Ana Oliveira",
-    technicianInitials: "AO",
-    status: "Encerrado",
-  },
-  {
-    date: "11/04/25 15:16",
-    id: "00005",
-    title: "Meu fone não conecta no computador",
-    service: "Suporte de Software",
-    value: "R$ 80,00",
-    customerName: "Suzane Moura",
-    customerInitials: "SM",
-    technicianName: "Ana Oliveira",
-    technicianInitials: "AO",
-    status: "Encerrado",
-  },
-];
+import { tickets } from "./ManagerTickets";
 
 export function CustomerTickets() {
   return (

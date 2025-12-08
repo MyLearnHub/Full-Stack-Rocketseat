@@ -1,6 +1,7 @@
 import eye from "../assets/icons/eye.svg";
 
 import { Button } from "./Button";
+import { Link } from "react-router";
 import { TableData } from "./TableData";
 import { StatusBadge } from "./StatusBadge";
 
@@ -48,9 +49,9 @@ export function TicketCustomerLine({
       </TableData>
 
       <TableData>
-        <a href={`/ticket/1`}>
+        <Link to={`/tickets/${ticket.id}`}>
           <Button variant="secondary" icon={eye}></Button>
-        </a>
+        </Link>
       </TableData>
     </tr>
   );

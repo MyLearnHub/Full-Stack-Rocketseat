@@ -53,7 +53,7 @@ export function TicketLine({
       </TableData>
 
       <TableData>
-        <a href={`/ticket/1`}>
+        <a href={`/tickets/${ticket.id}`}>
           <Button variant="secondary" icon={pencil}></Button>
         </a>
       </TableData>

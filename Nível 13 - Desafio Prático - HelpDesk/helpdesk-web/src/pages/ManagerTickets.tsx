@@ -2,12 +2,14 @@ import { TableHead } from "../components/TableHead";
 import { TicketLine } from "../components/TicketLine";
 import { Title } from "../components/Title";
 
-const tickets: Ticket[] = [
+export const tickets: Ticket[] = [
   {
     date: "13/04/25 20:56",
     id: "00003",
     title: "Rede lenta",
     service: "Instalação de Rede",
+    description:
+      "O sistema de backup automático parou de funcionar. Última execução bem-sucedida foi há uma semana.",
     value: "R$ 180,00",
     customerName: "André Costa",
     customerInitials: "AC",
@@ -20,6 +22,8 @@ const tickets: Ticket[] = [
     id: "00004",
     title: "Backup não está funcionando",
     service: "Recuperação de Dados",
+    description:
+      "O sistema de backup automático parou de funcionar. Última execução bem-sucedida foi há uma semana.",
     value: "R$ 200,00",
     customerName: "André Costa",
     customerInitials: "AC",
@@ -32,6 +36,8 @@ const tickets: Ticket[] = [
     id: "00001",
     title: "Computador não liga",
     service: "Manutenção de Hardware",
+    description:
+      "O sistema de backup automático parou de funcionar. Última execução bem-sucedida foi há uma semana.",
     value: "R$ 150,00",
     customerName: "Aline Souza",
     customerInitials: "AS",
@@ -44,6 +50,8 @@ const tickets: Ticket[] = [
     id: "00002",
     title: "Instalação de software de gestão",
     service: "Suporte de Software",
+    description:
+      "O sistema de backup automático parou de funcionar. Última execução bem-sucedida foi há uma semana.",
     value: "R$ 200,00",
     customerName: "Julia Maria",
     customerInitials: "JM",
@@ -56,6 +64,8 @@ const tickets: Ticket[] = [
     id: "00005",
     title: "Meu fone não conecta no computador",
     service: "Suporte de Software",
+    description:
+      "O sistema de backup automático parou de funcionar. Última execução bem-sucedida foi há uma semana.",
     value: "R$ 80,00",
     customerName: "Suzane Moura",
     customerInitials: "SM",

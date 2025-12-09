@@ -69,7 +69,7 @@ export function CustomerLayout() {
       </header>
 
       <aside
-        className={`w-44 h-screen absolute bg-gray-500 xl:hidden ${
+        className={`w-44 h-screen absolute bg-gray-500 xl:hidden z-10 ${
           open ? "block" : "hidden"
         }`}
       >

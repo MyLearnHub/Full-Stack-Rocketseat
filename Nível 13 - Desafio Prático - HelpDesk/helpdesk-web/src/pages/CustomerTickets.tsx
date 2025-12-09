@@ -1,9 +1,31 @@
+import { useEffect, useState } from "react";
 import { Title } from "../components/Title";
 import { TableHead } from "../components/TableHead";
 import { TicketCustomerLine } from "../components/TicketCustomerLine";
-import { tickets } from "./ManagerTickets";
+import { api } from "../services/api";
+import { useAuth } from "../hooks/useAuth";
 
 export function CustomerTickets() {
+  const { session } = useAuth();
+
+  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  async function loadTickets() {
+    try {
+      const response = await api.get("/tickets/my");
+      setTickets(response.data);
+    } catch (err) {
+      console.error("Erro ao buscar tickets", err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadTickets();
+  }, []);
+
   return (
     <div className="w-full">
       <div className="mb-4 xl:mb-6">
@@ -40,17 +62,31 @@ export function CustomerTickets() {
           </thead>
 
           <tbody className="text-gray-300">
-            {tickets.map((ticket, index) => {
-              const isLast = index === tickets.length - 1;
+            {loading ? (
+              <tr>
+                <td className="p-4 text-center" colSpan={8}>
+                  Carregando...
+                </td>
+              </tr>
+            ) : tickets.length === 0 ? (
+              <tr>
+                <td className="p-4 text-center" colSpan={8}>
+                  Nenhum chamado encontrado.
+                </td>
+              </tr>
+            ) : (
+              tickets.map((ticket, index) => {
+                const isLast = index === tickets.length - 1;
 
-              return (
-                <TicketCustomerLine
-                  key={ticket.id}
-                  ticket={ticket}
-                  isLast={isLast}
-                />
-              );
-            })}
+                return (
+                  <TicketCustomerLine
+                    key={ticket.id}
+                    ticket={ticket}
+                    isLast={isLast}
+                  />
+                );
+              })
+            )}
           </tbody>
         </table>
       </div>

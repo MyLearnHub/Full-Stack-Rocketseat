@@ -20,6 +20,12 @@ ticketsRoutes.get(
 );
 
 ticketsRoutes.get(
+  "/my",
+  verifyUserAuthorization(["customer"]),
+  ticketsController.my
+);
+
+ticketsRoutes.get(
   "/:id",
   verifyUserAuthorization(["employee", "manager"]),
   ticketsController.show

@@ -1,22 +1,22 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Check } from "lucide-react";
 
-type Item = {
+type Item<T extends string> = {
   label: string;
-  value: string;
+  value: T;
 };
 
-type Props = {
+type Props<T extends string> = {
   legend?: string;
   help?: string;
   alert?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  items: Item[];
+  value?: T | "";
+  onChange?: (value: T | "") => void;
+  items: Item<T>[];
   disabled?: boolean;
 };
 
-export function Select({
+export function Select<T extends string>({
   legend,
   help,
   alert,
@@ -24,7 +24,7 @@ export function Select({
   onChange,
   items,
   disabled,
-}: Props) {
+}: Props<T>) {
   const [open, setOpen] = useState(false);
 
   const selected = items.find((i) => i.value === value);

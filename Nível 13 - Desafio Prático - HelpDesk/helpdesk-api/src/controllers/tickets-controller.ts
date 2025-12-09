@@ -80,6 +80,20 @@ class TicketsController {
 
     response.json(ticket);
   }
+
+  async my(request: Request, response: Response) {
+    if (!request.user?.id) {
+      throw new AppError("Não autorizado", 401);
+    }
+
+    const tickets = await prisma.ticket.findMany({
+      where: { customerId: request.user.id },
+      orderBy: { updatedAt: "desc" },
+      include: { customer: true },
+    });
+
+    return response.json(tickets);
+  }
 }
 
 export { TicketsController };

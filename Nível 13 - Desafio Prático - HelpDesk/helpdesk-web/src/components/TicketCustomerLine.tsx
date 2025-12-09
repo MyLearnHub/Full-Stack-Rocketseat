@@ -18,7 +18,7 @@ export function TicketCustomerLine({
       className={`border-t border-gray-100 ${isLast ? "rounded-b-[10px]" : ""}`}
     >
       <TableData>
-        <div className="text-xs">{ticket.date}</div>
+        <div className="text-xs">{ticket.updatedAt}</div>
       </TableData>
 
       <TableData desktopOnly>
@@ -38,9 +38,9 @@ export function TicketCustomerLine({
       <TableData desktopOnly>
         <div className="flex items-center gap-2">
           <span className="h-5 w-5 rounded-full bg-blue-200 text-white flex items-center justify-center text-[8.75px]">
-            {ticket.technicianInitials}
+            {ticket.employee}
           </span>
-          {ticket.technicianName}
+          {ticket.employee}
         </div>
       </TableData>
 

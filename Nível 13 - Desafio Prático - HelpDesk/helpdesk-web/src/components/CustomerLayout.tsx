@@ -32,7 +32,7 @@ export function CustomerLayout() {
             <NavOption href="/" icon={clipboard}>
               Meus chamados
             </NavOption>
-            <NavOption href="/new/tickets" icon={add}>
+            <NavOption href="/tickets/create" icon={add}>
               Criar chamado
             </NavOption>
           </nav>
@@ -84,7 +84,7 @@ export function CustomerLayout() {
           <NavOption href="/" icon={clipboard}>
             Meus chamados
           </NavOption>
-          <NavOption href="/tickets" icon={add}>
+          <NavOption href="/tickets/create" icon={add}>
             Criar chamado
           </NavOption>
         </nav>

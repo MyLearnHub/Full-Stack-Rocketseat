@@ -11,30 +11,35 @@ const customers: Customer[] = [
     name: "André Costa",
     email: "andre.costa@client.com",
     customerInitials: "AC",
+    password: "123456",
   },
   {
     id: "2",
     name: "Julia Maria",
     email: "julia.maria@client.com",
     customerInitials: "JM",
+    password: "123456",
   },
   {
     id: "3",
     name: "Aline Souza",
     email: "aline.souza@client.com",
     customerInitials: "AS",
+    password: "123456",
   },
   {
     id: "4",
     name: "Marcelo Andrade",
     email: "marcelo.andrade@client.com",
     customerInitials: "MA",
+    password: "123456",
   },
   {
     id: "5",
     name: "Suzane Moura",
     email: "suzane.moura@client.com",
     customerInitials: "SM",
+    password: "123456",
   },
 ];
 
@@ -114,7 +119,7 @@ export function ManagerCustomers() {
             isOpen={isDeleteModalOpen}
             onClose={closeDeleteModal}
           />
-       )}
+        )}
       </div>
     </div>
   );

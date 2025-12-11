@@ -8,9 +8,24 @@ import add from "../assets/icons/add.svg";
 import { useState } from "react";
 import { Outlet } from "react-router";
 import { NavOption } from "./NavOption";
+import { ProfileModal } from "./ProfileModal";
 
 export function CustomerLayout() {
   const [open, setOpen] = useState(false);
+  const [isProfileModalOpen, setProfileModalOpen] = useState(false);
+  const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(
+    null
+  );
+
+  function openProfileModal(customer: Customer) {
+    setSelectedCustomer(customer);
+    setProfileModalOpen(true);
+  }
+
+  function closeProfileModal() {
+    setProfileModalOpen(false);
+    setSelectedCustomer(null);
+  }
 
   function toggleMenu() {
     setOpen((prev) => !prev);
@@ -38,10 +53,11 @@ export function CustomerLayout() {
           </nav>
         </div>
 
-        <div>
-          <div className="h-px w-full bg-gray-300"></div>
-
-          <div className="mx-4 my-5 flex gap-3">
+        <div
+          className="w-full px-4 py-5 border-t border-gray-300 cursor-pointer"
+          onClick={() => openProfileModal({} as Customer)}
+        >
+          <div className="flex gap-3">
             <img src={avatar} alt="Avatar Customer" />
             <div className="flex flex-col">
               <span className="text-gray-50 text-sm">Usuário Cliente</span>
@@ -65,7 +81,12 @@ export function CustomerLayout() {
           <img src={logoCustomer} alt="Logo HelpDesk" />
         </div>
 
-        <img src={avatar} alt="Avatar Customer" className="w-10" />
+        <img
+          src={avatar}
+          alt="Avatar Customer"
+          className="w-10 cursor-pointer"
+          onClick={() => openProfileModal({} as Customer)}
+        />
       </header>
 
       <aside
@@ -93,6 +114,14 @@ export function CustomerLayout() {
       <main className="bg-gray-50 rounded-t-3xl flex flex-1 px-6 pt-7 pb-6 xl:rounded-tl-3xl xl:rounded-tr-none xl:px-12 xl:pt-[52px] xl:pb-12">
         <Outlet />
       </main>
+
+      {selectedCustomer && (
+        <ProfileModal
+          customer={selectedCustomer}
+          isOpen={isProfileModalOpen}
+          onClose={closeProfileModal}
+        />
+      )}
     </div>
   );
 }

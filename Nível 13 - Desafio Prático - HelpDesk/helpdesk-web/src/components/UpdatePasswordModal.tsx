@@ -1,4 +1,5 @@
 import close from "../assets/icons/close-black.svg";
+import arrowLeft from "../assets/icons/arrow-left.svg";
 import { Input } from "./Input";
 import { Button } from "./Button";
 
@@ -11,13 +12,21 @@ export function UpdatePasswordModal({ isOpen, onClose }: Props) {
   if (!isOpen) return null;
 
   return (
-    <div className="w-screen h-screen bg-[#00000080] fixed inset-0 flex justify-center items-center z-60">
+    <div className="w-screen h-screen bg-[#00000080] fixed inset-0 flex justify-center items-center z-[1100px]">
       <div className="bg-gray-50 w-[358px] rounded-[10px] border border-gray-100 xl:w-[440px]">
         <div className="px-7 py-5 flex justify-between items-center">
-          <h2 className="text-md font-bold text-gray-300">Perfil</h2>
+          <div className="flex gap-3">
+            <img
+              src={arrowLeft}
+              alt=""
+              className="w-4.5 cursor-pointer"
+              onClick={onClose}
+            />
+            <h2 className="text-md font-bold text-gray-300">Alterar senha</h2>
+          </div>
           <img
             src={close}
-            alt="Ícone de fechar"
+            alt="Fechar"
             className="cursor-pointer"
             onClick={onClose}
           />
@@ -30,14 +39,13 @@ export function UpdatePasswordModal({ isOpen, onClose }: Props) {
               required
               legend="Senha atual"
               type="password"
-              placeholder="Digite sua senha atual"
             />
             <Input
-              name="confirm-password"
+              name="new-password"
               required
               legend="Nova senha"
               type="password"
-              placeholder="Digite sua nova senha"
+              alert="Mínimo de 6 dígitos"
             />
           </div>
         </div>

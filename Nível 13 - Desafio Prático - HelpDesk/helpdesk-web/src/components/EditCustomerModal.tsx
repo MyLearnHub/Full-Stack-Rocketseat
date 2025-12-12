@@ -1,12 +1,7 @@
 import close from "../assets/icons/close-black.svg";
 import avatar from "../assets/avatar/andre-costa.svg";
-import update from "../assets/icons/update.svg";
-import trash from "../assets/icons/trash.svg";
 import { Input } from "./Input";
 import { Button } from "./Button";
-import { useState } from "react";
-import { UpdatePasswordModal } from "./UpdatePasswordModal";
-import { ModalPortal } from "./ModalPortal";
 
 type Props = {
   customer: Customer;
@@ -15,13 +10,6 @@ type Props = {
 };
 
 export function EditCustomerModal({ customer, isOpen, onClose }: Props) {
-  const [isUpdatePasswordModalOpen, setUpdatePasswordModalOpen] =
-    useState(false);
-
-  function closeUpdatePasswordModal() {
-    setUpdatePasswordModalOpen(false);
-  }
-
   if (!isOpen) return null;
 
   return (
@@ -35,21 +23,6 @@ export function EditCustomerModal({ customer, isOpen, onClose }: Props) {
             className="cursor-pointer"
             onClick={onClose}
           />
-        </div>
-
-        <div className="w-full flex gap-3 items-center mb-5">
-          <img src={avatar} alt="" className="w-12" />
-
-          <div className="flex gap-1">
-            <Button variant="secondary" icon={update} className="text-xs">
-              Nova imagem
-            </Button>
-            <Button
-              variant="secondary"
-              icon={trash}
-              onClick={() => setUpdatePasswordModalOpen(true)}
-            ></Button>
-          </div>
         </div>
 
         <div className="px-7 pt-7 pb-8 border-y border-gray-100">
@@ -71,29 +44,12 @@ export function EditCustomerModal({ customer, isOpen, onClose }: Props) {
               placeholder="exemplo@mail.com"
               defaultValue={customer.email}
             />
-            <Input
-              name="password"
-              required
-              legend="Senha atual"
-              type="password"
-              placeholder="Digite sua senha atual"
-              defaultValue={customer.password}
-            />
           </div>
         </div>
 
         <div className="px-7 py-6">
           <Button>Salvar</Button>
         </div>
-
-        {isUpdatePasswordModalOpen && (
-          <ModalPortal>
-            <UpdatePasswordModal
-              isOpen={isUpdatePasswordModalOpen}
-              onClose={closeUpdatePasswordModal}
-            />
-          </ModalPortal>
-        )}
       </div>
     </div>
   );

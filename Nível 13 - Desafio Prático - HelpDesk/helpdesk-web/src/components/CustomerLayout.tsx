@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Outlet } from "react-router";
 import { NavOption } from "./NavOption";
 import { ProfileModal } from "./ProfileModal";
+import { UpdatePasswordModal } from "./UpdatePasswordModal";
 
 export function CustomerLayout() {
   const [open, setOpen] = useState(false);
@@ -16,6 +17,8 @@ export function CustomerLayout() {
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(
     null
   );
+  const [isUpdatePasswordModalOpen, setUpdatePasswordModalOpen] =
+    useState(false);
 
   function openProfileModal(customer: Customer) {
     setSelectedCustomer(customer);
@@ -25,6 +28,10 @@ export function CustomerLayout() {
   function closeProfileModal() {
     setProfileModalOpen(false);
     setSelectedCustomer(null);
+  }
+
+  function closeUpdatePasswordModal() {
+    setUpdatePasswordModalOpen(false);
   }
 
   function toggleMenu() {
@@ -120,6 +127,13 @@ export function CustomerLayout() {
           customer={selectedCustomer}
           isOpen={isProfileModalOpen}
           onClose={closeProfileModal}
+        />
+      )}
+
+      {isUpdatePasswordModalOpen && (
+        <UpdatePasswordModal
+          isOpen={isUpdatePasswordModalOpen}
+          onClose={closeUpdatePasswordModal}
         />
       )}
     </div>

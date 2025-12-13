@@ -10,6 +10,7 @@ const employees: Employee[] = [
     name: "Carlos Silva",
     email: "carlos.silva@test.com",
     employeeInitials: "CS",
+    password: "123456",
     availability: [
       "08:00",
       "09:00",
@@ -26,6 +27,7 @@ const employees: Employee[] = [
     name: "Ana Oliveira",
     email: "ana.oliveira@test.com",
     employeeInitials: "AO",
+    password: "123456",
     availability: ["13:00", "14:00", "15:00", "16:00"],
   },
   {
@@ -33,6 +35,7 @@ const employees: Employee[] = [
     name: "Cintia Lúcia",
     email: "cintia.lucia@test.com",
     employeeInitials: "CL",
+    password: "123456",
     availability: ["08:00", "09:00", "14:00", "15:00", "18:00"],
   },
   {
@@ -40,6 +43,7 @@ const employees: Employee[] = [
     name: "Marcos Alves",
     email: "marcos.alves@test.com",
     employeeInitials: "MA",
+    password: "123456",
     availability: [
       "07:00",
       "09:00",

@@ -1,10 +1,20 @@
+import { Button } from "./Button";
+
 type Props = React.ComponentProps<"input"> & {
   legend: string;
   alert?: string;
   help?: string;
+  updatePassword?: () => void;
 };
 
-export function Input({ legend, alert, type = "text", help, ...rest }: Props) {
+export function Input({
+  updatePassword,
+  legend,
+  alert,
+  type = "text",
+  help,
+  ...rest
+}: Props) {
   return (
     <fieldset className="text-gray-200 focus-within:text-blue-100 relative">
       <legend className="uppercase text-xxs font-bold text-inherit">
@@ -27,6 +37,18 @@ export function Input({ legend, alert, type = "text", help, ...rest }: Props) {
         <span className="bottom-[9px] text-md absolute left-0 text-gray-300">
           {help}
         </span>
+      )}
+
+      {updatePassword && (
+        <div className="flex absolute right-0 bottom-2">
+          <Button
+            variant="secondary"
+            className="text-gray-300 py-[5.5px] px-2"
+            onClick={updatePassword}
+          >
+            Alterar
+          </Button>
+        </div>
       )}
     </fieldset>
   );

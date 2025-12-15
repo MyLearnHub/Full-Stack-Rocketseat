@@ -1,8 +1,14 @@
 import help from "../assets/icons/help.svg";
 import clock from "../assets/icons/clock.svg";
-import check from "../assets/icons/circle-check.svg";
+import check from "../assets/icons/circle-green-check.svg";
 
-export function StatusBadge({ status }: { status: Ticket["status"] }) {
+export function StatusBadge({
+  status,
+  justIcon,
+}: {
+  status: Ticket["status"];
+  justIcon?: boolean;
+}) {
   const styles = {
     Aberto: "bg-red-100/20 text-red-100",
     "Em atendimento": "bg-blue-300/20 text-blue-300",
@@ -10,7 +16,9 @@ export function StatusBadge({ status }: { status: Ticket["status"] }) {
   };
 
   return (
-    <div className={`w-max p-1.5 rounded-full flex gap-1.5 text-xs font-bold ${styles[status]}`}>
+    <div
+      className={`w-max p-1.5 rounded-full flex gap-1.5 text-xs font-bold ${styles[status]}`}
+    >
       <img
         src={
           status === "Aberto"
@@ -21,9 +29,8 @@ export function StatusBadge({ status }: { status: Ticket["status"] }) {
         }
         alt="Ícone de Status"
       />
-      <span className="hidden xl:flex">
-        {status}
-      </span>
+
+      {!justIcon && <span>{status}</span>}
     </div>
   );
 }

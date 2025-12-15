@@ -51,7 +51,7 @@ export function EmployeeLayout() {
   }
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden flex flex-col bg-gray-500 xl:flex-row xl:pt-3">
+    <div className="w-screen h-screen overflow-x-hidden flex flex-col bg-gray-500 xl:flex-row xl:pt-3 overflow-hidden">
       <aside className="w-[200px] h-full flex-col justify-between hidden xl:flex">
         <div>
           <img src={logoEmployee} alt="Logo HelpDesk" className="mx-5 my-6" />
@@ -118,7 +118,7 @@ export function EmployeeLayout() {
         </nav>
       </aside>
 
-      <main className="bg-gray-50 rounded-t-3xl flex flex-1 px-6 pt-7 pb-6 xl:rounded-tl-3xl xl:rounded-tr-none xl:px-12 xl:pt-[52px] xl:pb-12">
+      <main className="bg-gray-50 rounded-t-3xl flex flex-1 px-6 pt-7 pb-6 overflow-y-scroll xl:rounded-tl-3xl xl:rounded-tr-none xl:px-12 xl:pt-[52px] xl:pb-12">
         <Outlet />
       </main>
 

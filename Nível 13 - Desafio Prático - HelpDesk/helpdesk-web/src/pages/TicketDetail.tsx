@@ -1,13 +1,17 @@
+import arrowLeft from "../assets/icons/arrow-left.svg";
+import check from "../assets/icons/circle-black-check.svg";
+import clock from "../assets/icons/white-clock.svg";
+
 import { useParams } from "react-router";
 import { useNavigate } from "react-router";
-import { tickets } from "./ManagerTickets";
 import { Title } from "../components/Title";
-import arrowLeft from "../assets/icons/arrow-left.svg";
 import { StatusBadge } from "../components/StatusBadge";
 import andreCosta from "../assets/avatar/andre-costa.svg";
 import carlosSilva from "../assets/avatar/carlos-silva.svg";
 import { NotFound } from "./NotFound";
 import { useAuth } from "../hooks/useAuth";
+import { tickets } from "./EmployeeTickets";
+import { Button } from "../components/Button";
 
 export function TicketDetails() {
   const { session } = useAuth();
@@ -26,16 +30,21 @@ export function TicketDetails() {
 
   return (
     <div className="mx-auto max-w-[800px] w-full">
-      <div className="w-full mb-4 xl:mb-6">
-        <div
-          className="flex items-center gap-2 cursor-pointer p-0.5 mb-1"
-          onClick={() => navigate(-1)}
-        >
-          <img src={arrowLeft} alt="Ícone de voltar" />
-          <span className="text-xs font-bold text-gray-200">Voltar</span>
+      <div className="w-full flex flex-col mb-4 xl:mb-6 xl:flex-row xl:items-end">
+        <div className="flex-1 mb-3 xl:mb-0">
+          <div
+            className="flex items-center gap-2 cursor-pointer p-0.5 mb-1"
+            onClick={() => navigate(-1)}
+          >
+            <img src={arrowLeft} alt="Ícone de voltar" />
+            <span className="text-xs font-bold text-gray-200">Voltar</span>
+          </div>
+          <Title>Chamado detalhado</Title>
         </div>
-
-        <Title>Chamado detalhado</Title>
+        <div className="flex gap-2">
+          <Button variant="secondary" icon={check} className="px-4 py-2.5 max-w-[138px] w-full xl:w-auto">Encerrar</Button>
+          <Button icon={clock} className="px-4 py-2.5">Iniciar atendimento</Button>
+        </div>
       </div>
 
       <div className="w-full flex gap-4 flex-col xl:flex-row xl:gap-6">
@@ -60,11 +69,11 @@ export function TicketDetails() {
           <div className="flex *:max-w-[200px] *:w-full justify-between">
             <div className="flex flex-col gap-0.5">
               <h3 className="text-xs font-bold text-gray-400">Criado em</h3>
-              <p className="text-xs text-gray-300">{ticket.date}</p>
+              <p className="text-xs text-gray-300">{ticket.createdAt}</p>
             </div>
             <div className="flex flex-col gap-0.5">
               <h3 className="text-xs font-bold text-gray-400">Atualizado em</h3>
-              <p className="text-xs text-gray-300">{ticket.date}</p>
+              <p className="text-xs text-gray-300">{ticket.updatedAt}</p>
             </div>
           </div>
           {canViewCustomerInfo && (
@@ -72,7 +81,7 @@ export function TicketDetails() {
               <h3 className="text-xs font-bold text-gray-400">Cliente</h3>
               <div className="flex gap-2">
                 <img src={andreCosta} alt="Ícone de Avatar" />
-                <p className="text-sm text-gray-300">{ticket.customerName}</p>
+                <p className="text-sm text-gray-300">{ticket.customer}</p>
               </div>
             </div>
           )}
@@ -86,7 +95,7 @@ export function TicketDetails() {
             <div className="flex gap-2">
               <img src={carlosSilva} alt="Ícone de Avatar" className="w-8" />
               <div className="flex flex-col">
-                <p className="text-sm text-gray-300">{ticket.technicianName}</p>
+                <p className="text-sm text-gray-300">{ticket.employee}</p>
                 <span className="text-xs text-gray-200">
                   carlos.silva@test.com
                 </span>

@@ -1,6 +1,8 @@
 import arrowLeft from "../assets/icons/arrow-left.svg";
 import check from "../assets/icons/circle-black-check.svg";
 import clock from "../assets/icons/white-clock.svg";
+import add from "../assets/icons/short-add.svg";
+import trash from "../assets/icons/trash.svg";
 
 import { useParams } from "react-router";
 import { useNavigate } from "react-router";
@@ -12,8 +14,12 @@ import { NotFound } from "./NotFound";
 import { useAuth } from "../hooks/useAuth";
 import { tickets } from "./EmployeeTickets";
 import { Button } from "../components/Button";
+import { useState } from "react";
+import { AddServiceModal } from "../components/AddServiceModal";
 
 export function TicketDetails() {
+  const [isAddModalOpen, setAddModalOpen] = useState(false);
+
   const { session } = useAuth();
   const canViewCustomerInfo = ["admin", "employee"].includes(
     session?.user.role ?? ""
@@ -28,8 +34,16 @@ export function TicketDetails() {
     return <NotFound />;
   }
 
+  function openAddModal() {
+    setAddModalOpen(true);
+  }
+
+  function closeAddModal() {
+    setAddModalOpen(false);
+  }
+
   return (
-    <div className="mx-auto max-w-[800px] w-full">
+    <div className="mx-auto max-w-[800px] w-full h-max">
       <div className="w-full flex flex-col mb-4 xl:mb-6 xl:flex-row xl:items-end">
         <div className="flex-1 mb-3 xl:mb-0">
           <div
@@ -41,10 +55,20 @@ export function TicketDetails() {
           </div>
           <Title>Chamado detalhado</Title>
         </div>
-        <div className="flex gap-2">
-          <Button variant="secondary" icon={check} className="px-4 py-2.5 max-w-[138px] w-full xl:w-auto">Encerrar</Button>
-          <Button icon={clock} className="px-4 py-2.5">Iniciar atendimento</Button>
-        </div>
+        {canViewCustomerInfo && (
+          <div className="flex gap-2">
+            <Button
+              variant="secondary"
+              icon={check}
+              className="px-4 py-2.5 max-w-[138px] w-full xl:w-auto"
+            >
+              Encerrar
+            </Button>
+            <Button icon={clock} className="px-4 py-2.5">
+              Iniciar atendimento
+            </Button>
+          </div>
+        )}
       </div>
 
       <div className="w-full flex gap-4 flex-col xl:flex-row xl:gap-6">
@@ -131,6 +155,48 @@ export function TicketDetails() {
           </div>
         </div>
       </div>
+
+      {canViewCustomerInfo && (
+        <div className="max-w-[480px] w-full mt-3 p-6 border border-gray-100 rounded-[10px] flex gap-5 flex-col xl:p-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-bold text-gray-400">
+              Serviços adicionais
+            </h3>
+            <Button icon={add} onClick={openAddModal}></Button>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <div className="flex justify-between items-center">
+              <p className="text-xs font-bold text-gray-300">
+                Assinatura de backup
+              </p>
+              <div className="flex items-center gap-6">
+                <span className="text-xs text-gray-300">R$ 120,00</span>
+                <Button icon={trash} variant="secondary"></Button>
+              </div>
+            </div>
+
+            <div className="w-full border-b border-gray-100"></div>
+
+            <div className="flex justify-between items-center">
+              <p className="text-xs font-bold text-gray-300">
+                Formatação do PC
+              </p>
+              <div className="flex items-center gap-6">
+                <span className="text-xs text-gray-300">R$ 75,00</span>
+                <Button
+                  icon={trash}
+                  variant="secondary"
+                ></Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isAddModalOpen && (
+        <AddServiceModal isOpen={isAddModalOpen} onClose={closeAddModal} />
+      )}
     </div>
   );
 }
